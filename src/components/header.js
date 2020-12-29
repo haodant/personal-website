@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 
 // styled components
 import { Container, Flex } from '../styles/globalStyles'
@@ -25,9 +26,9 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, hamburgerPosition, setHam
             <Container>
                 <Flex spaceBetween noHeight>
                     <Logo>
-                        <a>HA</a>
+                        <Link to='/'>HA</Link>
                         <span></span>
-                        <a>DAN TAN</a>
+                        <Link to='/'>DAN TAN</Link>
                     </Logo>
                     <Menu ref={hamburger} onClick={() => setToggleMenu(!toggleMenu)} onMouseEnter={menuHover}>
                         <button>

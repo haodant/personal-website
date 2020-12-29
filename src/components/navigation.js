@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
 // Styled components
@@ -24,6 +26,7 @@ const Navigation = ({toggleMenu, setToggleMenu}) => {
         <>
             <AnimatePresence>
                 {toggleMenu && (
+                    <BrowserRouter>
                     <Nav 
                         initial={{x: '-100%'}} 
                         exit={{x: '-100%'}} 
@@ -63,7 +66,7 @@ const Navigation = ({toggleMenu, setToggleMenu}) => {
                                             })
                                         }} 
                                     >
-                                        <a>
+                                        <NavLink to={route.path}>
                                             <motion.div 
                                                 initial={{ x: -108 }} 
                                                 whileHover={{ 
@@ -89,7 +92,7 @@ const Navigation = ({toggleMenu, setToggleMenu}) => {
                                                 </span>
                                                 {route.title}
                                             </motion.div>
-                                        </a>
+                                        </NavLink>
                                     </motion.li>
                                 ))}
                             </ul>
@@ -116,6 +119,7 @@ const Navigation = ({toggleMenu, setToggleMenu}) => {
                         </NavVideos>
                     </Container>
                 </Nav>
+                </BrowserRouter>
                 )}
             </AnimatePresence>
         </>
