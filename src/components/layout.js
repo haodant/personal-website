@@ -59,16 +59,18 @@ const Layout = ({ children }) => {
     top: `${hamburgerPosition.y}px`
   };
 
-  const cursorStyles = ['pointer', 'hovered', 'locked'];
+  const { currentTheme, cursorStyles } = useGlobalStateContext()
+  const dispatch = useGlobalDispatchContext()
 
   const onCursor = cursorType => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
+    dispatch({type: 'CURSOR_TYPE', cursorType: cursorType})
   };
 
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={currentTheme === 'dark'? darkTheme : lightTheme}>
       <GlobalStyle />
       <Cursor toggleMenu={toggleMenu} />
       <Header

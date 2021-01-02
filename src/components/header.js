@@ -5,10 +5,15 @@ import { Link } from 'react-router-dom'
 import { Container, Flex } from '../styles/globalStyles'
 import { HeaderNav, Logo, Menu } from '../styles/headerStyles'
 
+// Context
+import { useGlobalStateContext, useGlobalDispatchContext } from '../context/globalContext'
+
 // Custom hook
 import useElementPosition from '../hooks/useElementPosition'
 
-const Header = ({ onCursor, toggleMenu, setToggleMenu, hamburgerPosition, setHamburgerPosition }) => {
+const Header = ({ onCursor, toggleMenu, setToggleMenu, setHamburgerPosition }) => {
+    const dispatch = useGlobalDispatchContext()
+    const { currentTheme }= useGlobalStateContext()
     const hamburger = useRef(null);
     const position = useElementPosition(hamburger);
 
@@ -16,6 +21,18 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, hamburgerPosition, setHam
         onCursor('locked')
         setHamburgerPosition({ x: position.x, y: position.y + 72 })
     }
+
+    const toggleTheme = () => {
+        if (currentTheme === 'dark') {
+            dispatch({type: 'TOGGLE_THEME', theme: 'light'})
+        } else {
+            dispatch({type: 'TOGGLE_THEME', theme: 'dark'})
+        }
+    }
+
+    useEffect(() => {
+        window.localStorage.setItem('theme', currentTheme)
+    }, [currentTheme])
 
     return (
         <HeaderNav
@@ -25,12 +42,12 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, hamburgerPosition, setHam
         >
             <Container>
                 <Flex spaceBetween noHeight>
-                    <Logo>
+                    <Logo onMouseEnter={() => onCursor('hovered')} onMouseLeave={onCursor}>
                         <Link to='/'>HA</Link>
-                        <span></span>
+                        <span onClick={toggleTheme} onMouseEnter={() => onCursor('pointer')} onMouseLeave={onCursor}></span>
                         <Link to='/'>DAN TAN</Link>
                     </Logo>
-                    <Menu ref={hamburger} onClick={() => setToggleMenu(!toggleMenu)} onMouseEnter={menuHover}>
+                    <Menu ref={hamburger} onClick={() => setToggleMenu(!toggleMenu)} onMouseEnter={menuHover} onMouseLeave={onCursor}>
                         <button>
                             <span></span>
                             <span></span>

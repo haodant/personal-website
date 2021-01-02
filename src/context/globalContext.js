@@ -7,6 +7,12 @@ const GlobalDispatchContext = createContext()
 // Reducer
 const globalReducer = (state, action) => {
     switch(action.type) {
+        case 'TOGGLE_THEME': {
+            return {
+                ...state, 
+                currentTheme: action.theme
+            }
+        }
         case 'CURSOR_TYPE': {
             return {
                 ...state,
@@ -21,6 +27,7 @@ const globalReducer = (state, action) => {
 
 export const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(globalReducer, {
+        currentTheme: window.localStorage.getItem('theme') === null ? 'dark' : window.localStorage.getItem('theme'),
         cursorType: false,
         cursorStyles: ['pointer', 'hovered', 'locked']
     })
