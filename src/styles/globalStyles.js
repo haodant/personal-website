@@ -7,7 +7,7 @@ export const Container = styled.div`
     position: relative;
     width: auto;
     height: 100%;
-    @media (min-width: 1024px) {
+    /* @media (min-width: 1024px) {
         max-width: 960px
     }
     @media (min-width: 1216px) {
@@ -15,7 +15,7 @@ export const Container = styled.div`
     }
     @media (min-width: 1408px) {
         max-width: 1244px
-    }
+    } */
     ${props => props.fluid && css`
         padding: 0;
         margin: 0;
@@ -40,6 +40,9 @@ export const Flex = styled.div`
     `}
     ${props => props.noHeight && css`
         height: 0;
+    `}
+    ${props => props.wrap && css`
+        flex-wrap: wrap;
     `}
 `
 
