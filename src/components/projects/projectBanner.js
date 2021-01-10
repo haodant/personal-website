@@ -9,8 +9,9 @@ import {
 const ProjectBanner = ({section}) => {
     return (
             <Container fluid>
-                <ProjectSection>{section}</ProjectSection>
-                {/* <ProjectSubtitle>{section.detail}</ProjectSubtitle> */}
+                    <ProjectSection>{section}</ProjectSection>
+                    {/* <ProjectSubtitle>{section.detail}</ProjectSubtitle> */}
+
             </Container>
     );
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, BrowserRouter, Switch, Route } from "react-router-dom";
-import ProjectSummary from "./projects/projectSummary";
+import ResearchProject from "./projects/researchProject";
 import ProjectBanner from "./projects/projectBanner";
+import DesignCodeProject from "./projects/designCodeProject";
 
 import { research } from './projects/project.data';
 
@@ -15,11 +16,15 @@ const Research = () => {
     <ResearchPage>
       <Container fluid>
         <ProjectBanner section={"Research"}></ProjectBanner>
-        <Flex wrap>
-          {research.map(project => (
-            <ProjectSummary project={project}></ProjectSummary>
+        <Flex wrap="true">
+          {research.map((project, index) => (
+            <ResearchProject key={`research${index}`} project={project}></ResearchProject>
           ))}
         </Flex>
+      </Container>
+      <Container fluid>
+        <ProjectBanner section={"Design and Code"}></ProjectBanner>
+            <DesignCodeProject></DesignCodeProject>
       </Container>
     </ResearchPage>
   );

@@ -12,7 +12,7 @@ import {
   ProjectDescription
 } from "../../styles/projectStyles";
 
-const ProjectSummary = ({ project }) => {
+const ResearchProject = ({ project }) => {
   return (
     <Summary key={project.id}>
       <Container>
@@ -38,4 +38,4 @@ const ProjectSummary = ({ project }) => {
   );
 };
 
-export default ProjectSummary;
+export default ResearchProject;
