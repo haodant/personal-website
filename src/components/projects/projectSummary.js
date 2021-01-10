@@ -17,8 +17,7 @@ const ProjectSummary = ({ project }) => {
     <Summary key={project.id}>
       <Container>
         <ProjectThumbnail>
-          <ProjectImage src="/logo192.png" alt={project.title}></ProjectImage>
-          {/* src={`/${project.img}/.png`} */}
+          <ProjectImage src={`/img/${project.img}`} alt={project.title}></ProjectImage>
           <ProjectDetail>
             <ProjectSubtitle>{project.subtitle}</ProjectSubtitle>
             <ProjectTitle>{project.title}</ProjectTitle>

@@ -10,13 +10,13 @@ export const Summary = styled.div`
             opacity: 0.4;
         }
     }
-    height: 350px;
-    width: 100%;
+    height: 400px;
+    width: 48%;
 `
 
 export const ProjectThumbnail = styled.div`
     display: flex;
-    height: 80%;
+    height: 60%;
     width: 100%;
     position: relative;
 `
@@ -24,7 +24,6 @@ export const ProjectThumbnail = styled.div`
 export const ProjectDetail = styled.div`
     display: flex;
     flex-direction: column;
-    align-self: flex-end;
     width: 100%;
     padding: 32px;
     box-sizing: border-box;
@@ -35,7 +34,7 @@ export const ProjectDetail = styled.div`
 export const ProjectTitle = styled.h2`
     font-size: 2.4rem;
     line-height: 3.4rem;
-    width: 85%;
+    width: 95%;
     color: ${props => props.theme.text};
 `
 
@@ -53,7 +52,7 @@ export const ProjectImage = styled.img`
     height: 100%;
     overflow: hidden;
     position: absolute;
-    opacity: .65;
+    opacity: .8;
     transition: .4s cubic-bezier(0.6, -0.05, 0.1, 0.99);
     object-fit: cover;
 `
@@ -65,6 +64,9 @@ export const ProjectDescription = styled.div`
 `
 
 export const ProjectSection = styled.div`
+    width: 100%;
+    height: 40px;
+    background-color: ${props => props.theme.red};
 
 `
 
