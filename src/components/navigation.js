@@ -10,7 +10,6 @@ import { Nav, NavHeader, CloseNav, NavList, NavVideos } from '../styles/navigati
 const navRoutes = [
     {id: 0, title: 'research', path: '/research', video: 'featured-video.mp4'},
     {id: 1, title: 'code and design', path: '/code-design', video: 'easy.mp4'},
-    {id: 2, title: 'art', path: '/art', video: 'make-it-zero.mp4'},
     {id: 3, title: 'CV', path: '/cv', video: 'it-takes-an-island.mp4'},
     {id: 4, title: 'About', path: '/about', video: '50-beaches.mp4'}
 ]

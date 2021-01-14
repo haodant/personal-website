@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { motion } from 'framer-motion'
 
-export const Summary = styled.div`
+export const Summary = styled(motion.div)`
     display: block;
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 0;
     &:hover {
         img {
@@ -68,8 +68,8 @@ export const ProjectDescription = styled.div`
 export const ProjectSection = styled.h2`
     padding: 10px 30px;
     width: 100%;
+    box-sizing: border-box;
     color: ${props => props.theme.text};
-    background-color: ${props => props.theme.red};
 
 `
 
@@ -90,7 +90,7 @@ a {
 `
 
 export const DesignCodeContent = styled(motion.div)`
-height: 480px;
+height: 400px;
 width: 100%;
 padding: 56px 124px;
 box-sizing: border-box;
@@ -109,7 +109,7 @@ h3 {
 .project-title {
     position: absolute;
     bottom: -128px;
-    font-size: 7rem;
+    font-size: 4rem;
     font-weight: 900;
     line-height: 90px;
     margin: 0;

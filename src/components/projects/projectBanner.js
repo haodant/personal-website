@@ -8,7 +8,7 @@ import {
 
 const ProjectBanner = ({section}) => {
     return (
-            <Container fluid>
+            <Container>
                     <ProjectSection>{section}</ProjectSection>
                     {/* <ProjectSubtitle>{section.detail}</ProjectSubtitle> */}
 

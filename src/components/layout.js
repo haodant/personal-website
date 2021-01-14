@@ -30,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 'Open Sans', 'Helvetica Neue';
     background: ${props => props.theme.background};
     overscroll-behavior: none;
     overflow-x: hidden;

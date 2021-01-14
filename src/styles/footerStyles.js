@@ -9,7 +9,7 @@ export const FooterNav = styled.div`
 
 export const FooterContent= styled.div`
     color: ${props => props.theme.text};
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: .5rem;
     text-align: center;

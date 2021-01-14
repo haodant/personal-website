@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Styled components
 import { Container, Flex } from "../../styles/globalStyles";
@@ -12,12 +12,48 @@ import {
   ProjectDescription
 } from "../../styles/projectStyles";
 
+// Scroll Behavior
+import { useInView } from 'react-intersection-observer'
+import { useAnimation } from 'framer-motion'
+
 const ResearchProject = ({ project }) => {
+  const animation = useAnimation();
+  const [researchRef, inView] = useInView({
+      triggerOnce: true,
+      rootMargin: '-300px'
+  })
+
+  useEffect(() => {
+      if (inView) {
+          animation.start('visible')
+      }
+  }, [animation, inView])
+
+
   return (
-    <Summary key={project.id}>
+    <Summary
+      key={project.id}
+      ref={researchRef}
+      animate={animation}
+      initial="hidden"
+      variants={{
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }
+        },
+        hidden: {
+          opacity: 0,
+          y: 72
+        }
+      }}
+    >
       <Container>
         <ProjectThumbnail>
-          <ProjectImage src={`/img/${project.img}`} alt={project.title}></ProjectImage>
+          <ProjectImage
+            src={`/img/${project.img}`}
+            alt={project.title}
+          ></ProjectImage>
           <ProjectDetail>
             <ProjectSubtitle>{project.subtitle}</ProjectSubtitle>
             <ProjectTitle>{project.title}</ProjectTitle>

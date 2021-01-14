@@ -18,14 +18,13 @@ export const Logo = styled.div`
         color: ${props => props.theme.text}
     }
     span {
-        height: 1rem;
-        width: 1rem;
+        height: 0.8rem;
+        width: 0.8rem;
         background: ${props => props.theme.red};
         margin: 0 4px;
         border-radius: 100%;
         display: inline-block;
         position: relative;
-        bottom: 2px;
     }
 `
 

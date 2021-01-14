@@ -6,6 +6,7 @@ import Layout from './components/layout';
 // components
 import HomeBanner from "./components/homePage/homeBanner"
 import Research from "./components/research"
+import DesignCode from './components/designCode';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={HomeBanner} />
           <Route path='/research' component={Research} />
+          <Route path='/code-design' component={DesignCode} />
         </Switch>
       </Layout>
     </div>

@@ -11,23 +11,18 @@ import { Container, Flex } from "../styles/globalStyles";
 import { ResearchPage } from "../styles/projectStyles";
 
 
-const Research = () => {
+const DesignCode = () => {
   return (
     <ResearchPage>
       <Container>
-        <ProjectBanner section={"Research"}></ProjectBanner>
-        <Flex wrap="true">
-          {research.map((project, index) => (
-            <ResearchProject key={`research${index}`} project={project}></ResearchProject>
-          ))}
-        </Flex>
-      </Container>
-      {/* <Container>
         <ProjectBanner section={"Design and Code"}></ProjectBanner>
             <DesignCodeProject></DesignCodeProject>
-      </Container> */}
+            <DesignCodeProject></DesignCodeProject>
+            <DesignCodeProject></DesignCodeProject>
+            <DesignCodeProject></DesignCodeProject>
+      </Container>
     </ResearchPage>
   );
 };
 
-export default Research;
+export default DesignCode;

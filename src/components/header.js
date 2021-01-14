@@ -43,9 +43,9 @@ const Header = ({ onCursor, toggleMenu, setToggleMenu, setHamburgerPosition }) =
             <Container>
                 <Flex spaceBetween noHeight>
                     <Logo onMouseEnter={() => onCursor('hovered')} onMouseLeave={onCursor}>
-                        <Link to='/'>HA</Link>
+                        <Link to='/'>Ha</Link>
                         <span onClick={toggleTheme} onMouseEnter={() => onCursor('pointer')} onMouseLeave={onCursor}></span>
-                        <Link to='/'>DAN TAN</Link>
+                        <Link to='/'>dan Tan</Link>
                     </Logo>
                     <Menu ref={hamburger} onClick={() => setToggleMenu(!toggleMenu)} onMouseEnter={menuHover} onMouseLeave={onCursor}>
                         <button>
