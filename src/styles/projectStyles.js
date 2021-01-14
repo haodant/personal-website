@@ -78,6 +78,11 @@ export const ResearchPage = styled.div`
     width: 100%;
 `
 
+export const ProjectPage = styled.div`
+    margin: 200px 0;
+    width: 100%;
+`
+
 // Design and Code Project
 export const DesignCodeProjectSection = styled(motion.div)`
 margin-bottom: 200px;
@@ -89,8 +94,20 @@ a {
 }
 `
 
+export const ProjectContainer = styled(motion.div)`
+margin-bottom: 200px;
+position: relative;
+width: 500px;
+
+a {
+    margin-bottom: 50px;
+    position: relative;
+    display: block;
+}
+`
+
 export const DesignCodeContent = styled(motion.div)`
-height: 400px;
+height: 300px;
 width: 100%;
 padding: 56px 124px;
 box-sizing: border-box;
@@ -109,12 +126,12 @@ h3 {
 .project-title {
     position: absolute;
     bottom: -128px;
-    font-size: 4rem;
-    font-weight: 900;
-    line-height: 90px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 60px;
     margin: 0;
     .arrow {
-        width: 120px;
+        width: 100px;
         height: 80px;
         display: block;
         position: relative;
@@ -122,8 +139,8 @@ h3 {
         svg {
             position: absolute;
             top: 16px;
-            left: -48px;
-            width: 108px;
+            left: -80px;
+            width: 100px;
             path {
                 fill: ${props => props.theme.text};
             }
@@ -136,7 +153,7 @@ export const FeaturedVideo = styled.div`
 position: absolute;
 z-index: -1;
 width: 100%;
-height: 480px;
+height: 100%;
 top: 0;
 display: block;
 overflow: hidden;

@@ -1,27 +1,32 @@
 import React from "react";
 import { Link, BrowserRouter, Switch, Route } from "react-router-dom";
-import ResearchProject from "./projects/researchProject";
 import ProjectBanner from "./projects/projectBanner";
 import DesignCodeProject from "./projects/designCodeProject";
+import Project from "./projects/project";
 
-import { research } from './projects/project.data';
+import { research } from "./projects/project.data";
 
 // Styled components
 import { Container, Flex } from "../styles/globalStyles";
-import { ResearchPage } from "../styles/projectStyles";
-
+import { ProjectPage, ResearchPage } from "../styles/projectStyles";
 
 const DesignCode = () => {
   return (
-    <ResearchPage>
+    <ProjectPage>
       <Container>
         <ProjectBanner section={"Design and Code"}></ProjectBanner>
-            <DesignCodeProject></DesignCodeProject>
-            <DesignCodeProject></DesignCodeProject>
-            <DesignCodeProject></DesignCodeProject>
-            <DesignCodeProject></DesignCodeProject>
+        <Flex wrap>
+          <Project></Project>
+          <Project></Project>
+          <Project></Project>
+          <Project></Project>
+          <Project></Project>
+          <Project></Project>
+          <Project></Project>
+          <Project></Project>
+        </Flex>
       </Container>
-    </ResearchPage>
+    </ProjectPage>
   );
 };
 
