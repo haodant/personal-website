@@ -41,7 +41,7 @@ export const Flex = styled.div`
     ${props => props.noHeight && css`
         height: 0;
     `}
-    ${props => props.wrap && css`
+    ${props => props.wraping && css`
         flex-wrap: wrap;
     `}
 `

@@ -16,7 +16,7 @@ const Research = () => {
     <ResearchPage>
       <Container>
         <ProjectBanner section={"Research"}></ProjectBanner>
-        <Flex wrap="true">
+        <Flex wraping>
           {research.map((project, index) => (
             <ResearchProject key={`research${index}`} project={project}></ResearchProject>
           ))}

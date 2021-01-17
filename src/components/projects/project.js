@@ -7,7 +7,8 @@ import { Container, Flex } from "../../styles/globalStyles";
 import {
   ProjectContainer,
   DesignCodeContent,
-  FeaturedVideo
+  FeaturedVideo,
+  ProjectImage
 } from "../../styles/projectStyles";
 
 // Context
@@ -20,9 +21,17 @@ import {
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 
-const Project = () => {
+const Project = ({ project }) => {
   //Play video on mouseover
   let videoRef = useRef(null);
+
+  const getPosition = () => {
+      if (project.id % 3 === 1) {
+          return 'up';
+      } else if (project.id % 3 === 2) {
+          return 'down';
+      }
+  }
 
   const { cursorStyles } = useGlobalStateContext();
   const dispatch = useGlobalDispatchContext();
@@ -45,11 +54,13 @@ const Project = () => {
 
   return (
     <ProjectContainer
+        key={project.id}
       ref={featuredRef}
       animate={animation}
       whileHover={{scale: 1.05}}
-      transition={{type: "transform", duration: 1, ease: [0.4, 0, 0.2, 1]}}
+      transition={{type: "transform", duration: 0.8, ease: [0.4, 0, 0.2, 1]}}
       initial="hidden"
+      position={getPosition()}
       variants={{
         visible: {
           opacity: 1,
@@ -69,15 +80,15 @@ const Project = () => {
             onHoverEnd={() => setHovered(!hovered)}
             onMouseEnter={() => {
               onCursor("hovered");
-              videoRef.current.play();
+              videoRef?.current.play();
             }}
             onMouseLeave={() => {
                 onCursor();
-                videoRef.current.pause();
+                videoRef?.current.pause();
             }}
           >
             <Flex spaceBetween>
-              <h3>Client Work</h3>
+              <h3>{project.subtitle}</h3>
               <motion.div
                 animate={{ opacity: hovered ? 1 : 0 }}
                 transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
@@ -87,7 +98,7 @@ const Project = () => {
               </motion.div>
             </Flex>
             <h2 className="project-title">
-              New York Guqin Salon
+              {project.title}
               <span className="arrow">
                 <motion.svg
                   animate={{ x: hovered ? 48 : 0 }}
@@ -104,15 +115,23 @@ const Project = () => {
               </span>
             </h2>
           </DesignCodeContent>
-          <FeaturedVideo>
+          {project.video ? (
+            <FeaturedVideo>
             <video
-              ref={videoRef}
-              autoPlay={hovered ? true : false}
-              loop
-              muted
-              src="video/featured-video.mp4"
+                ref={videoRef}
+                autoPlay={hovered ? true : false}
+                loop
+                muted
+                src="video/featured-video.mp4"
             />
-          </FeaturedVideo>
+            </FeaturedVideo>
+          ) : (
+            <ProjectImage
+            src={`/img/${project.img}`}
+            alt={project.title}
+          ></ProjectImage>
+          )}
+
         </Link>
       </Container>
     </ProjectContainer>
