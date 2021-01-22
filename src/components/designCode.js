@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, BrowserRouter, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ProjectBanner from "./projects/projectBanner";
 import Project from "./projects/project";
 
@@ -14,20 +14,11 @@ const DesignCode = () => {
   return (
     <ProjectPage>
       <Container>
-        <ProjectBanner section={"Design and Code"}></ProjectBanner>
+        {/* <ProjectBanner section={"Design and Code"}></ProjectBanner> */}
         <Flex wraping>
         {research.map((project, index) => (
             <Project key={`research${index}`} project={project}></Project>
           ))}
-          <Project></Project>
-          <Project up></Project>
-          <Project down></Project>
-          <Project></Project>
-          <Project up></Project>
-          <Project down></Project>
-          <Project></Project>
-          <Project up></Project>
-          <Project down></Project>
         </Flex>
       </Container>
     </ProjectPage>

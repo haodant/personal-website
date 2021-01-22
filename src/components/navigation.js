@@ -23,7 +23,6 @@ const Navigation = ({toggleMenu, setToggleMenu}) => {
 
     return (
         <>
-            <AnimatePresence>
                 {toggleMenu && (
                     <BrowserRouter>
                     <Nav 
@@ -99,7 +98,7 @@ const Navigation = ({toggleMenu, setToggleMenu}) => {
                         <NavVideos>
                             <motion.div animate={{ width: revealVideo.show ? 0 : "100%"}} className="reveal"></motion.div>
                             <div className="video">
-                                <AnimatePresence initial={false} exitBeforeEnter>
+                                <AnimatePresence exitBeforeEnter>
                                     <motion.video
                                         key={revealVideo.key} 
                                         initial={{opacity: 0}}
@@ -120,7 +119,6 @@ const Navigation = ({toggleMenu, setToggleMenu}) => {
                 </Nav>
                 </BrowserRouter>
                 )}
-            </AnimatePresence>
         </>
     )
 }

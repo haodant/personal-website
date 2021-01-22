@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+
 //Styled Components
-import { Container, Flex } from "../../styles/globalStyles";
+import { Flex } from "../../styles/globalStyles";
 import {
   ProjectContainer,
   DesignCodeContent,
@@ -21,17 +22,19 @@ import {
 import { useInView } from "react-intersection-observer";
 import { useAnimation } from "framer-motion";
 
+const transition = { duration: 0.6, ease: [0.43, 0, 0.2, 1] };
+
 const Project = ({ project }) => {
   //Play video on mouseover
   let videoRef = useRef(null);
 
   const getPosition = () => {
-      if (project.id % 3 === 1) {
-          return 'up';
-      } else if (project.id % 3 === 2) {
-          return 'down';
-      }
-  }
+    if (project.id % 3 === 1) {
+      return "up";
+    } else if (project.id % 3 === 2) {
+      return "down";
+    }
+  };
 
   const { cursorStyles } = useGlobalStateContext();
   const dispatch = useGlobalDispatchContext();
@@ -54,11 +57,11 @@ const Project = ({ project }) => {
 
   return (
     <ProjectContainer
-        key={project.id}
+      key={project.id}
       ref={featuredRef}
       animate={animation}
-      whileHover={{scale: 1.05}}
-      transition={{type: "transform", duration: 0.8, ease: [0.4, 0, 0.2, 1]}}
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "transform", ...transition }}
       initial="hidden"
       position={getPosition()}
       variants={{
@@ -73,67 +76,64 @@ const Project = ({ project }) => {
         }
       }}
     >
-      <Container>
-        <Link to="/">
-          <DesignCodeContent
-            onHoverStart={() => setHovered(!hovered)}
-            onHoverEnd={() => setHovered(!hovered)}
-            onMouseEnter={() => {
-              onCursor("hovered");
-              videoRef?.current.play();
-            }}
-            onMouseLeave={() => {
-                onCursor();
-                videoRef?.current.pause();
-            }}
-          >
-            <Flex spaceBetween>
-              <h3>{project.subtitle}</h3>
-              <motion.div
-                animate={{ opacity: hovered ? 1 : 0 }}
-                transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
-                className="meta"
+      <Link to={"/work/" + project.id} key={project.id}>
+        <DesignCodeContent
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
+          onHoverStart={() => setHovered(!hovered)}
+          onHoverEnd={() => setHovered(!hovered)}
+          onMouseEnter={() => {
+            if (videoRef.current) videoRef.current.play();
+          }}
+          onMouseLeave={() => {
+            if (videoRef.current) videoRef.current.pause();
+          }}
+        >
+          <Flex spaceBetween>
+            <h3>{project.subtitle}</h3>
+            <motion.div
+              animate={{ opacity: hovered ? 1 : 0 }}
+              transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
+              className="meta"
+            >
+              <h4>2019</h4>
+            </motion.div>
+          </Flex>
+          <h2 className="project-title">
+            {project.title}
+            <span className="arrow">
+              <motion.svg
+                animate={{ x: hovered ? 48 : 0 }}
+                transition={transition}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 101 57"
               >
-                <h4>2019</h4>
-              </motion.div>
-            </Flex>
-            <h2 className="project-title">
-              {project.title}
-              <span className="arrow">
-                <motion.svg
-                  animate={{ x: hovered ? 48 : 0 }}
-                  transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 101 57"
-                >
-                  <path
-                    d="M33 34H0V24h81.429L66 7.884 73.548 0l19.877 20.763.027-.029L101 28.618 73.829 57l-7.548-7.884L80.753 34H33z"
-                    fill="#FFF"
-                    fillRule="evenodd"
-                  ></path>
-                </motion.svg>
-              </span>
-            </h2>
-          </DesignCodeContent>
-          {project.video ? (
-            <FeaturedVideo>
+                <path
+                  d="M33 34H0V24h81.429L66 7.884 73.548 0l19.877 20.763.027-.029L101 28.618 73.829 57l-7.548-7.884L80.753 34H33z"
+                  fill="#FFF"
+                  fillRule="evenodd"
+                ></path>
+              </motion.svg>
+            </span>
+          </h2>
+        </DesignCodeContent>
+        {project.video ? (
+          <FeaturedVideo>
             <video
-                ref={videoRef}
-                autoPlay={hovered ? true : false}
-                loop
-                muted
-                src="video/featured-video.mp4"
+              ref={videoRef}
+              autoPlay={hovered ? true : false}
+              loop
+              muted
+              src="video/featured-video.mp4"
             />
-            </FeaturedVideo>
-          ) : (
-            <ProjectImage
+          </FeaturedVideo>
+        ) : (
+          <ProjectImage
             src={`/img/${project.img}`}
             alt={project.title}
           ></ProjectImage>
-          )}
-
-        </Link>
-      </Container>
+        )}
+      </Link>
     </ProjectContainer>
   );
 };

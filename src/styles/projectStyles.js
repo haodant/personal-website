@@ -21,16 +21,6 @@ export const ProjectThumbnail = styled.div`
   position: relative;
 `;
 
-export const ProjectDetail = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 32px;
-  box-sizing: border-box;
-  z-index: 1;
-  position: relative;
-`;
-
 export const ProjectTitle = styled.h2`
   font-size: 2.4rem;
   line-height: 3.4rem;
@@ -46,6 +36,7 @@ export const ProjectSubtitle = styled.span`
 `;
 
 export const ProjectImage = styled.img`
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
@@ -95,24 +86,25 @@ export const DesignCodeProjectSection = styled(motion.div)`
 
 export const ProjectContainer = styled(motion.div)`
   position: relative;
-  width: 500px;
+  width: 26vw;
+  padding: 0 44px;
 
   ${props =>
-    props.position === 'up' &&
+    props.position === "up" &&
     css`
       margin-top: -150px;
     `}
   ${props =>
-    props.position === 'down' &&
+    props.position === "down" &&
     css`
       margin-top: 150px;
     `}
     
     a {
-        margin-bottom: 50px;
-        position: relative;
-        display: block;
-    }
+    margin-bottom: 50px;
+    position: relative;
+    display: block;
+  }
 `;
 
 export const DesignCodeContent = styled(motion.div)`
@@ -166,4 +158,78 @@ export const FeaturedVideo = styled.div`
   top: 0;
   display: block;
   overflow: hidden;
+`;
+
+// PROJECT DETAILS PAGE
+export const ProjectDetail = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: ${props => props.theme.background};
+`;
+
+export const ProjectHeader = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  h2 {
+    color: ${props => props.theme.red};
+  }
+`;
+
+export const ProjectContent = styled.div`
+  width: 30%;
+  padding-left: 40px;
+  color: ${props => props.theme.text};
+  h2 {
+    font-size: 3rem;
+  }
+`;
+
+export const CloseButton = styled.div`
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  &:before,
+  &:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 36px;
+    width: 4px;
+    background-color:  ${props => props.theme.text};
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+`;
+
+export const Showcase = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30%;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  .showcase {
+    position: absolute;
+    height: 100%;
+    margin: 0;
+    z-index: -1;
+    video,
+    img {
+      height: 100%;
+    }
+  }
 `;
