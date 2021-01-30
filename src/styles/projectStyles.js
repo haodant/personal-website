@@ -35,7 +35,7 @@ export const ProjectSubtitle = styled.span`
   color: ${props => props.theme.text};
 `;
 
-export const ProjectImage = styled.img`
+export const ProjectImage = styled(motion.img)`
   z-index: -1;
   top: 0;
   left: 0;
@@ -73,21 +73,11 @@ export const ProjectPage = styled.div`
   width: 100%;
 `;
 
-// Design and Code Project
-export const DesignCodeProjectSection = styled(motion.div)`
-  margin-bottom: 200px;
-  position: relative;
-  a {
-    margin-bottom: 200px;
-    position: relative;
-    display: block;
-  }
-`;
-
+// Project summary
 export const ProjectContainer = styled(motion.div)`
   position: relative;
   width: 26vw;
-  padding: 0 44px;
+  margin: 0 44px;
 
   ${props =>
     props.position === "up" &&
@@ -108,13 +98,14 @@ export const ProjectContainer = styled(motion.div)`
 `;
 
 export const DesignCodeContent = styled(motion.div)`
-  height: 300px;
+  height: 260px;
   width: 100%;
-  padding: 56px 124px;
+  padding: 10px 80px;
   box-sizing: border-box;
   color: ${props => props.theme.text};
   h3 {
-    font-size: 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
   .meta {
     display: flex;
@@ -126,10 +117,10 @@ export const DesignCodeContent = styled(motion.div)`
   }
   .project-title {
     position: absolute;
-    bottom: -128px;
-    font-size: 2.5rem;
-    font-weight: 600;
-    line-height: 60px;
+    bottom: -120px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 44px;
     margin: 0;
     .arrow {
       width: 100px;
@@ -140,8 +131,8 @@ export const DesignCodeContent = styled(motion.div)`
       svg {
         position: absolute;
         top: 16px;
-        left: -100px;
-        width: 100px;
+        left: -60px;
+        width: 60px;
         path {
           fill: ${props => props.theme.text};
         }
@@ -161,7 +152,7 @@ export const FeaturedVideo = styled.div`
 `;
 
 // PROJECT DETAILS PAGE
-export const ProjectDetail = styled.div`
+export const ProjectDetail = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
@@ -173,34 +164,31 @@ export const ProjectDetail = styled.div`
   color: ${props => props.theme.background};
 `;
 
-export const ProjectHeader = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  h2 {
-    color: ${props => props.theme.red};
-  }
-`;
-
-export const ProjectContent = styled.div`
+export const ProjectContent = styled(motion.div)`
   width: 30%;
   padding-left: 40px;
   color: ${props => props.theme.text};
-  h2 {
+  .project-type {
+    color: ${props => props.theme.red};
+  }
+  .project-title {
     font-size: 3rem;
   }
 `;
 
 export const CloseButton = styled.div`
   position: absolute;
-  right: 28px;
+  right: 5%;
   top: 50%;
-  width: 32px;
-  height: 32px;
+  width: 56px;
+  height: 56px;
+  background-color: ${props => props.theme.background};
+  border-radius: 100%;
   &:before,
   &:after {
     position: absolute;
-    left: 15px;
+    left: 26px;
+    top: 11px;
     content: " ";
     height: 36px;
     width: 4px;
@@ -214,22 +202,19 @@ export const CloseButton = styled.div`
   }
 `;
 
-export const Showcase = styled.div`
+export const Showcase = styled(motion.div)`
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 30%;
-  z-index: -1;
+  /* z-index: -1; */
   height: 100%;
   width: 100%;
-  .showcase {
-    position: absolute;
-    height: 100%;
-    margin: 0;
-    z-index: -1;
+  
     video,
     img {
+      width: 100%;
       height: 100%;
+      object-fit: cover;
+      overflow: hidden;
     }
-  }
 `;

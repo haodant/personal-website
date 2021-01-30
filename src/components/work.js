@@ -10,7 +10,7 @@ import { Container, Flex } from "../styles/globalStyles";
 import { ProjectPage } from "../styles/projectStyles";
 
 
-const DesignCode = () => {
+const Work = () => {
   return (
     <ProjectPage>
       <Container>
@@ -25,4 +25,4 @@ const DesignCode = () => {
   );
 };
 
-export default DesignCode;
+export default Work;

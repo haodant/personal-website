@@ -80,6 +80,7 @@ const Header = ({
           >
               {navRoutes.map(route => (
                 <motion.li
+                  key={`li-${route.id}`}
                   onMouseEnter={() => onCursor("pointer")}
                   onMouseLeave={onCursor}
                 >

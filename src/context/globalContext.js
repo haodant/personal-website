@@ -19,6 +19,12 @@ const globalReducer = (state, action) => {
                 cursorType: action.cursorType,
             }
         }
+        case 'POSITION': {
+            return {
+                ...state,
+                imgPosition: action.position,
+            }
+        }
         default: {
             throw new Error(`Unhandled action type: ${action.type}`)
         }
@@ -29,7 +35,8 @@ export const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(globalReducer, {
         currentTheme: window.localStorage.getItem('theme') === null ? 'dark' : window.localStorage.getItem('theme'),
         cursorType: false,
-        cursorStyles: ['pointer', 'hovered', 'locked']
+        cursorStyles: ['pointer', 'hovered', 'locked'],
+        imgPosition: [400, 400]
     })
 
     return (

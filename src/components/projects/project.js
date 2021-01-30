@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
+import { motion, useAnimation } from "framer-motion";
 
 //Styled Components
 import { Flex } from "../../styles/globalStyles";
@@ -12,19 +11,17 @@ import {
   ProjectImage
 } from "../../styles/projectStyles";
 
-// Context
-import {
-  useGlobalStateContext,
-  useGlobalDispatchContext
-} from "../../context/globalContext";
-
 // Scroll Behavior
 import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
+
+// Context
+import { useGlobalDispatchContext } from "../../context/globalContext";
 
 const transition = { duration: 0.6, ease: [0.43, 0, 0.2, 1] };
 
 const Project = ({ project }) => {
+  const dispatch = useGlobalDispatchContext();
+
   //Play video on mouseover
   let videoRef = useRef(null);
 
@@ -36,18 +33,17 @@ const Project = ({ project }) => {
     }
   };
 
-  const { cursorStyles } = useGlobalStateContext();
-  const dispatch = useGlobalDispatchContext();
-  const onCursor = cursorType => {
-    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
-    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
-  };
   const [hovered, setHovered] = useState(false);
   const animation = useAnimation();
   const [featuredRef, inView] = useInView({
     triggerOnce: true,
     rootMargin: "-300px"
   });
+
+  const handleClick = e => {
+    const rect = e.target.getBoundingClientRect();
+    dispatch({ type: "POSITION", position: [rect.left, rect.top] });
+  };
 
   useEffect(() => {
     if (inView) {
@@ -59,9 +55,9 @@ const Project = ({ project }) => {
     <ProjectContainer
       key={project.id}
       ref={featuredRef}
-      animate={animation}
       whileHover={{ scale: 1.05 }}
       transition={{ type: "transform", ...transition }}
+      animate={animation}
       initial="hidden"
       position={getPosition()}
       variants={{
@@ -88,9 +84,10 @@ const Project = ({ project }) => {
           onMouseLeave={() => {
             if (videoRef.current) videoRef.current.pause();
           }}
+          onClick={handleClick}
         >
           <Flex spaceBetween>
-            <h3>{project.subtitle}</h3>
+            <h3>{project.type}</h3>
             <motion.div
               animate={{ opacity: hovered ? 1 : 0 }}
               transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
