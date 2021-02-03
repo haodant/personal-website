@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { motion } from 'framer-motion'
 
 export const FooterNav = styled.div`
     position: relative;

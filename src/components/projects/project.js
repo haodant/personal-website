@@ -93,7 +93,7 @@ const Project = ({ project }) => {
               transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
               className="meta"
             >
-              <h4>2019</h4>
+              <h4>{project.stack}</h4>
             </motion.div>
           </Flex>
           <h2 className="project-title">
@@ -115,15 +115,13 @@ const Project = ({ project }) => {
           </h2>
         </DesignCodeContent>
         {project.video ? (
-          <FeaturedVideo>
             <video
               ref={videoRef}
               autoPlay={hovered ? true : false}
               loop
               muted
-              src="video/featured-video.mp4"
+              src={`/video/${project.video}`}
             />
-          </FeaturedVideo>
         ) : (
           <ProjectImage
             src={`/img/${project.img}`}

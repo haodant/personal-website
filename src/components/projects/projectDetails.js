@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import { research } from "./project.data";
@@ -11,6 +11,7 @@ import {
   ProjectContent,
   Showcase
 } from "../../styles/projectStyles";
+import { parent, child } from "../../styles/animation";
 
 // Context
 import {
@@ -65,21 +66,55 @@ const ProjectDetails = props => {
 
   return (
     <ProjectDetail initial="initial" animate="animate" exit="exit">
-      <ProjectContent initial={{ opacity: 0 }}>
-        <h2 className="project-type">{project.type}</h2>
-        <h2 className="project-title">{project.title}</h2>
-        <p>{project.description}</p>
-        <a>link</a>
+      <ProjectContent variants={parent} initial="initial" animate="animate">
+        <h2 className="project-type" variants={child}>
+          {project.type}
+        </h2>
+        <h4 className="project-title" variants={child}>
+          {project.title}
+        </h4>
+        <p className="project-description">{project.description}</p>
+        <span>
+          <a href={project.github}>Github</a>
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Icons / Navigation / new-window</title>
+            <g fill="none" fill-rule="evenodd">
+              <path
+                d="M18 19H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h5c.55 0 1-.45 1-1s-.45-1-1-1H5a2 2 0 00-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.55-.45-1-1-1s-1 .45-1 1v5c0 .55-.45 1-1 1zM14 4c0 .55.45 1 1 1h2.59l-9.13 9.13a.996.996 0 101.41 1.41L19 6.41V9c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1h-5c-.55 0-1 .45-1 1z"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+        </span>
+
+        <span>
+          <a href={project.website}>Website</a>
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Icons / Navigation / new-window</title>
+            <g fill="none" fill-rule="evenodd">
+              <path
+                d="M18 19H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h5c.55 0 1-.45 1-1s-.45-1-1-1H5a2 2 0 00-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.55-.45-1-1-1s-1 .45-1 1v5c0 .55-.45 1-1 1zM14 4c0 .55.45 1 1 1h2.59l-9.13 9.13a.996.996 0 101.41 1.41L19 6.41V9c0 .55.45 1 1 1s1-.45 1-1V4c0-.55-.45-1-1-1h-5c-.55 0-1 .45-1 1z"
+                fill-rule="nonzero"
+              />
+            </g>
+          </svg>
+        </span>
       </ProjectContent>
       <Showcase
         initial={{
           x: imgPosition[0],
           y: imgPosition[1],
           width: "calc(26vw*1.05)",
-          height: "273px",
+          height: "273px"
         }}
         animate={{
-          x: '30%',
+          x: "30%",
           y: 0,
           width: "90%",
           height: "100%",
@@ -88,9 +123,10 @@ const ProjectDetails = props => {
       >
         {project.video ? (
           <motion.video
-            src="video/featured-video.mp4"
+            src={`/video/${project.video}`}
             loop
             autoPlay
+            muted
           ></motion.video>
         ) : (
           <motion.img

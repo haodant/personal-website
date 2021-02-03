@@ -63,11 +63,6 @@ export const ProjectSection = styled.h2`
   color: ${props => props.theme.text};
 `;
 
-export const ResearchPage = styled.div`
-  margin: 200px 0;
-  width: 100%;
-`;
-
 export const ProjectPage = styled.div`
   margin: 200px 0;
   width: 100%;
@@ -77,7 +72,7 @@ export const ProjectPage = styled.div`
 export const ProjectContainer = styled(motion.div)`
   position: relative;
   width: 26vw;
-  margin: 0 44px;
+  margin: 0 40px;
 
   ${props =>
     props.position === "up" &&
@@ -94,6 +89,17 @@ export const ProjectContainer = styled(motion.div)`
     margin-bottom: 50px;
     position: relative;
     display: block;
+  }
+
+  video {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: block;
+    overflow: hidden;
+    object-fit: cover;
   }
 `;
 
@@ -141,16 +147,6 @@ export const DesignCodeContent = styled(motion.div)`
   }
 `;
 
-export const FeaturedVideo = styled.div`
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  display: block;
-  overflow: hidden;
-`;
-
 // PROJECT DETAILS PAGE
 export const ProjectDetail = styled(motion.div)`
   position: absolute;
@@ -174,6 +170,25 @@ export const ProjectContent = styled(motion.div)`
   .project-title {
     font-size: 3rem;
   }
+  .project-description {
+    font-size: 1.6rem;
+  }
+  span {
+    font-size: 1.2rem;
+    display: inline-block;
+    padding-right: 12px;
+    a {
+      text-decoration: none;
+      color: ${props => props.theme.text};
+    }
+    svg {
+      width: 16px;
+      height: 16px;
+      path {
+        fill: ${props => props.theme.text};
+      }
+    }
+  }
 `;
 
 export const CloseButton = styled.div`
@@ -192,7 +207,7 @@ export const CloseButton = styled.div`
     content: " ";
     height: 36px;
     width: 4px;
-    background-color:  ${props => props.theme.text};
+    background-color: ${props => props.theme.text};
   }
   &:before {
     transform: rotate(45deg);
@@ -206,15 +221,15 @@ export const Showcase = styled(motion.div)`
   position: absolute;
   top: 0;
   bottom: 0;
-  /* z-index: -1; */
+  z-index: -1;
   height: 100%;
   width: 100%;
-  
-    video,
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      overflow: hidden;
-    }
+
+  video,
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
 `;

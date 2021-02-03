@@ -9,14 +9,12 @@ import {
   Quote,
   Quoteline
 } from "../../styles/homeStyles";
-
-//context
-import { useGlobalStateContext } from "../../context/globalContext";
+import { parent, child } from "../../styles/animation"
 
 //Custom hook
 import useWindowSize from "../../hooks/useWindowSize";
 
-const HomeBanner = ({ onCursor }) => {
+const HomeBanner = () => {
   let mount = useRef(null);
   const size = useWindowSize();
   // const { currentTheme } = useGlobalStateContext();
@@ -78,27 +76,6 @@ const HomeBanner = ({ onCursor }) => {
     renderer.render(scene, camera);
     requestAnimationFrame(render);
   }
-
-  const parent = {
-    initial: { y: 800 },
-    animate: {
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: [0.6, 0.05, -0.01, 0.9]
-      }
-    }
-  };
-
-  const child = {
-    initial: { y: 800 },
-    animate: {
-      y: 0,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
 
   return (
     <Banner>
