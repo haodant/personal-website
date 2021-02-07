@@ -162,16 +162,19 @@ export const ProjectDetail = styled(motion.div)`
 
 export const ProjectContent = styled(motion.div)`
   width: 30%;
-  padding-left: 40px;
+  margin-left: 40px;
+  padding: 22px;
   color: ${props => props.theme.text};
   .project-type {
     color: ${props => props.theme.red};
+    font-weight: 400;
   }
   .project-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
+    font-weight: 400;
   }
   .project-description {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   span {
     font-size: 1.2rem;
@@ -198,6 +201,7 @@ export const CloseButton = styled.div`
   width: 56px;
   height: 56px;
   background-color: ${props => props.theme.background};
+  opacity: 0.6;
   border-radius: 100%;
   &:before,
   &:after {

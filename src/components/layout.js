@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
   });
 
   const darkTheme = {
-    background: "#000",
+    background: "#343833",
     text: "#cfbeb5",
     red: "#9b5555",
     left: `${hamburgerPosition.x}px`,
@@ -51,8 +51,8 @@ const Layout = ({ children }) => {
   };
 
   const lightTheme = {
-    background: "#fff",
-    text: "#343833",
+    background: "#f2f0e6",
+    text: "#232623",
     red: "#9b5555",
     left: `${hamburgerPosition.x}px`,
     top: `${hamburgerPosition.y}px`
@@ -69,7 +69,7 @@ const Layout = ({ children }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <ThemeProvider theme={currentTheme === 'dark'? darkTheme : lightTheme}>
+    <ThemeProvider theme={currentTheme === 'light'? lightTheme : darkTheme}>
       <GlobalStyle />
       <Cursor toggleMenu={toggleMenu} />
       <Header

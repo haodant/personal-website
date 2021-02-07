@@ -14,24 +14,11 @@ import {
   useGlobalDispatchContext
 } from "../context/globalContext";
 
-// Custom hook
-import useElementPosition from "../hooks/useElementPosition";
-
 const Header = ({
   onCursor,
-  toggleMenu,
-  setToggleMenu,
-  setHamburgerPosition
 }) => {
   const dispatch = useGlobalDispatchContext();
   const { currentTheme } = useGlobalStateContext();
-  //   const hamburger = useRef(null);
-  //   const position = useElementPosition(hamburger);
-
-  //   const menuHover = () => {
-  //     onCursor("locked");
-  //     setHamburgerPosition({ x: position.x, y: position.y + 72 });
-  //   };
 
   const toggleTheme = () => {
     if (currentTheme === "dark") {
@@ -47,7 +34,6 @@ const Header = ({
 
   const navRoutes = [
     { id: "work", title: "work", path: "/work" },
-    { id: "cv", title: "cv", path: "/cv" },
     { id: "about", title: "about", path: "/about" }
   ];
 
@@ -72,12 +58,7 @@ const Header = ({
             <Link to="/" key='home2'>dan Tan</Link>
           </Logo>
 
-          <Menu
-          // ref={hamburger}
-          // onClick={() => setToggleMenu(!toggleMenu)}
-          // onMouseEnter={menuHover}
-          // onMouseLeave={onCursor}
-          >
+          <Menu>
               {navRoutes.map(route => (
                 <motion.li
                   key={`li-${route.id}`}
