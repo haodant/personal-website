@@ -8,12 +8,12 @@ const Footer = () =>{
     return (
         <FooterNav>
             <Container>
-                <Flex spaceBetween>
+                <Flex spaceBetween wraping>
                     <FooterContent>
                         haodantan@gmail.com
                     </FooterContent>
                     <FooterContent>
-                        Haodan Tan @2021
+                        design & coded by me
                     </FooterContent>
                     <FooterContent>
                         Toronto, Canada

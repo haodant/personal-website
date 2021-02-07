@@ -12,8 +12,10 @@ export const FooterContent= styled.div`
     font-weight: 400;
     line-height: .5rem;
     text-align: center;
-    flex: 1;
-    ${props => props.wider && css`
-        flex: 2;
-    `}
+    padding: 10px 5px;
+
+    @media (max-width: 600px) {
+        font-size: 0.8rem;
+        padding: 5px 5px;
+    }
 `

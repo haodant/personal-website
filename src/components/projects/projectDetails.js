@@ -19,6 +19,9 @@ import {
   useGlobalDispatchContext
 } from "../../context/globalContext";
 
+//Custom hook
+import useWindowSize from "../../hooks/useWindowSize";
+
 //Ease
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
@@ -35,6 +38,8 @@ const ProjectDetails = props => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType });
   };
+
+  const size = useWindowSize();
 
   const renderLink = (content, link) => (
     <span onMouseEnter={() => onCursor("hovered")} onMouseLeave={onCursor}>
@@ -77,9 +82,9 @@ const ProjectDetails = props => {
           height: "273px"
         }}
         animate={{
-          x: "40%",
+          x: 0,
           y: 0,
-          width: "90%",
+          width: "100%",
           height: "100%",
           transition: { delay: 0.2, ...transition }
         }}
@@ -98,12 +103,14 @@ const ProjectDetails = props => {
           ></motion.img>
         )}
       </Showcase>
+      {size.width > 1000 ? (      
       <Link to="/work">
         <CloseButton
           onMouseEnter={() => onCursor("hovered")}
           onMouseLeave={onCursor}
         ></CloseButton>
-      </Link>
+      </Link>) : null }
+
     </ProjectDetail>
   );
 };

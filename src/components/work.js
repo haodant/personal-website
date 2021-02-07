@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ProjectBanner from "./projects/projectBanner";
 import Project from "./projects/project";
 
 import { research } from "./projects/project.data";
@@ -14,7 +12,6 @@ const Work = () => {
   return (
     <ProjectPage>
       <Container>
-        {/* <ProjectBanner section={"Design and Code"}></ProjectBanner> */}
         <Flex wraping>
         {research.map((project, index) => (
             <Project key={`research${index}`} project={project}></Project>

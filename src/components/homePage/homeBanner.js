@@ -82,7 +82,7 @@ const HomeBanner = () => {
       <div ref={mount} />
       <Quote variants={parent} initial="initial" animate="animate">
         <Quoteline variants={child}>
-          I am HCI researcher / engineer. 
+          I am a HCI researcher / engineer. 
         </Quoteline>
       </Quote>
 

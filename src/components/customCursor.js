@@ -8,8 +8,8 @@ import { useGlobalStateContext } from '../context/globalContext'
 const CustomCursor = ({toggleMenu}) => {
     const { cursorType } = useGlobalStateContext();
     const [mousePosition, setMousePosition] = useState({
-        x: 400,
-        y: 400
+        x: 100,
+        y: 100
     })
 
     const onMouseMove = event => {

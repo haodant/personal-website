@@ -71,18 +71,27 @@ export const ProjectPage = styled.div`
 // Project summary
 export const ProjectContainer = styled(motion.div)`
   position: relative;
-  width: 26vw;
-  margin: 0 40px;
+  width: 100%;
+  margin: 20px 40px;
+  @media (max-width: 590px) {
+    margin: 20px 0;
+  }
+  @media (min-width: 937px) {
+    max-width: 38vw;
+  }
+  @media (min-width: 1390px) {
+    max-width: 26vw;
+  }
 
   ${props =>
     props.position === "up" &&
     css`
-      margin-top: -150px;
+      margin-top: -100px;
     `}
   ${props =>
     props.position === "down" &&
     css`
-      margin-top: 150px;
+      margin-top: 100px;
     `}
     
     a {
@@ -149,21 +158,23 @@ export const DesignCodeContent = styled(motion.div)`
 
 // PROJECT DETAILS PAGE
 export const ProjectDetail = styled(motion.div)`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: ${props => props.theme.background};
+  @media (max-width: 1000px) {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 130px;
+  }
 `;
 
 export const ProjectContent = styled(motion.div)`
-  width: 30%;
-  margin-left: 40px;
-  padding: 22px;
+  width: 40%;
+  margin-left: 30px;
+  padding: 26px;
   color: ${props => props.theme.text};
   .project-type {
     color: ${props => props.theme.red};
@@ -190,6 +201,31 @@ export const ProjectContent = styled(motion.div)`
       path {
         fill: ${props => props.theme.text};
       }
+    }
+  }
+  @media (max-width: 600px) {
+    width: 90%;
+    margin-left: 10px;
+    .project-title {
+      font-size: 1.4rem;
+    }
+    .project-description {
+      font-size: 1.2rem;
+    }
+    span {
+      font-size: 0.8rem;
+      svg {
+      width: 10px;
+      height: 10px;
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
+  @media (max-width: 1200px) {
+    .project-title {
+      margin: 20px 0;
     }
   }
 `;
@@ -222,9 +258,6 @@ export const CloseButton = styled.div`
 `;
 
 export const Showcase = styled(motion.div)`
-  position: absolute;
-  top: 0;
-  bottom: 0;
   z-index: -1;
   height: 100%;
   width: 100%;

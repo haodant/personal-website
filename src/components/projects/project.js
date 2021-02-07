@@ -11,6 +11,9 @@ import {
   ProjectImage
 } from "../../styles/projectStyles";
 
+//Custom hook
+import useWindowSize from "../../hooks/useWindowSize";
+
 // Scroll Behavior
 import { useInView } from "react-intersection-observer";
 
@@ -20,16 +23,25 @@ import { useGlobalDispatchContext } from "../../context/globalContext";
 const transition = { duration: 0.6, ease: [0.43, 0, 0.2, 1] };
 
 const Project = ({ project }) => {
+  const size = useWindowSize();
   const dispatch = useGlobalDispatchContext();
 
   //Play video on mouseover
   let videoRef = useRef(null);
 
   const getPosition = () => {
-    if (project.id % 3 === 1) {
-      return "up";
-    } else if (project.id % 3 === 2) {
-      return "down";
+    if (size.width >= 1390) {
+      if (project.id % 3 === 1) {
+        return "up";
+      } else if (project.id % 3 === 2) {
+        return "down";
+      }
+    } else if (size.width >= 937) {
+      if (project.id % 2 === 1) {
+        return "up";
+      } else {
+        return 'down';
+      }
     }
   };
 
@@ -37,7 +49,7 @@ const Project = ({ project }) => {
   const animation = useAnimation();
   const [featuredRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-300px"
+    rootMargin: "-160px"
   });
 
   const handleClick = e => {

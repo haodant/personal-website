@@ -16,6 +16,9 @@ import {
   useGlobalDispatchContext
 } from "../context/globalContext";
 
+//Custom hook
+import useWindowSize from "../hooks/useWindowSize";
+
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
@@ -37,27 +40,19 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Layout = ({ children }) => {
-  const [hamburgerPosition, setHamburgerPosition] = useState({
-    x: 0,
-    y: 0
-  });
-
   const darkTheme = {
     background: "#343833",
     text: "#cfbeb5",
     red: "#9b5555",
-    left: `${hamburgerPosition.x}px`,
-    top: `${hamburgerPosition.y}px`
   };
 
   const lightTheme = {
     background: "#f2f0e6",
     text: "#232623",
     red: "#9b5555",
-    left: `${hamburgerPosition.x}px`,
-    top: `${hamburgerPosition.y}px`
   };
-
+  
+  const size = useWindowSize();
   const { currentTheme, cursorStyles } = useGlobalStateContext()
   const dispatch = useGlobalDispatchContext()
 
@@ -71,13 +66,11 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={currentTheme === 'light'? lightTheme : darkTheme}>
       <GlobalStyle />
-      <Cursor toggleMenu={toggleMenu} />
+      {size.width > 1024 ? <Cursor toggleMenu={toggleMenu} /> : null}
       <Header
         onCursor={onCursor}
         toggleMenu={toggleMenu}
         setToggleMenu={setToggleMenu}
-        hamburgerPosition={hamburgerPosition}
-        setHamburgerPosition={setHamburgerPosition}
       />
       <Navigation onCursor={onCursor} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
       <main>{children}</main>

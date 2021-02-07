@@ -14,7 +14,7 @@ export const HeaderNav = styled(motion.div)`
 export const Logo = styled.div`
   a {
     font-size: 1.8rem;
-    font-weight: 800;
+    font-weight: 600;
     color: ${props => props.theme.text};
   }
   span {
