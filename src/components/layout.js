@@ -7,7 +7,6 @@ import { normalize } from "styled-normalize";
 // Components
 import Header from "./header";
 import Cursor from "./customCursor";
-import Navigation from './navigation'
 import Footer from './footer'
 
 // Context
@@ -41,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => {
   const darkTheme = {
-    background: "#343833",
+    background: "#151E27",
     text: "#cfbeb5",
     red: "#9b5555",
   };
@@ -72,7 +71,6 @@ const Layout = ({ children }) => {
         toggleMenu={toggleMenu}
         setToggleMenu={setToggleMenu}
       />
-      <Navigation onCursor={onCursor} toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
       <main>{children}</main>
       <Footer onCursor={onCursor}></Footer>
     </ThemeProvider>

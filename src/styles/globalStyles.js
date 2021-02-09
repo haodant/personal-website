@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { motion } from "framer-motion"
 
 export const Container = styled.div`
     flex-grow: 1;
@@ -15,7 +16,7 @@ export const Container = styled.div`
 
 `
 
-export const Flex = styled.div`
+export const Flex = styled(motion.div)`
     position: relative;
     display: flex;
     align-items: center;
@@ -38,7 +39,7 @@ export const Flex = styled.div`
 `
 
 export const Cursor = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 32px;
@@ -73,3 +74,10 @@ export const Cursor = styled.div`
     }
 `
 
+export const PanelAnimation = styled(motion.div)`
+    background-color: ${props => props.theme.background};
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 11;
+`

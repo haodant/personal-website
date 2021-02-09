@@ -9,7 +9,7 @@ import {
   Quote,
   Quoteline
 } from "../../styles/homeStyles";
-import { parent, child } from "../../styles/animation"
+import { transition, parent, child } from "../../styles/animation"
 
 //Custom hook
 import useWindowSize from "../../hooks/useWindowSize";
@@ -78,7 +78,14 @@ const HomeBanner = () => {
   }
 
   return (
-    <Banner>
+    <Banner 
+      initial={{ opacity: 0 }} 
+      animate={{ 
+        opacity: 1, 
+        transition: { duration: 1.2, ease: transition }
+      }}
+      exit={{ opacity: 0 }} 
+      >
       <div ref={mount} />
       <Quote variants={parent} initial="initial" animate="animate">
         <Quoteline variants={child}>

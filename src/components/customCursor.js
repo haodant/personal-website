@@ -26,7 +26,7 @@ const CustomCursor = ({toggleMenu}) => {
     return (
         <Cursor 
             className={`${!!cursorType? "hovered": ""} ${cursorType} ${toggleMenu ? "nav-open" : ""}`}
-            style={{left: `${mousePosition.x}px`, top: `${mousePosition.y}px`}}
+            style={{left: `${mousePosition.x}px`, top: `${mousePosition.y - window.scrollY}px`}}
         />
     )
 }

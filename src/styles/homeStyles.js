@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-export const Banner = styled.div`
+export const Banner = styled(motion.div)`
     margin: 0;
     padding: 0;
     background: ${props => props.theme.background};

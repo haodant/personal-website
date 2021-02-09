@@ -1,20 +1,30 @@
+export const transition = [0.6, 0.05, -0.01, 0.9];
+
 export const parent = {
-    initial: { y: 800 },
-    animate: {
-      y: 0,
+    initial: { opacity: 0 },
+    animate: {   
+      opacity: 1,
       transition: {
-        duration: 1,
-        ease: [0.6, 0.05, -0.01, 0.9]
+        delay: 1,
+        staggerChildren: 0.05
       }
-    }
+    },
+    exit: { opacity: 0 },
   };
 
 export const child = {
-    initial: { y: 800 },
+    initial: { 
+      y: 800,
+      opacity: 0
+    },
     animate: {
       y: 0,
-      transition: {
-        staggerChildren: 0.2
-      }
+      opacity: 1,
+      transition: { duration: 1.2, ease: transition }
+    },
+    exit: {
+      y: 800,
+      opacity: 0,
+      transition: { duration: 1.2, ease: transition }
     }
   };

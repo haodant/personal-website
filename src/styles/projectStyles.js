@@ -63,7 +63,7 @@ export const ProjectSection = styled.h2`
   color: ${props => props.theme.text};
 `;
 
-export const ProjectPage = styled.div`
+export const ProjectPage = styled(motion.div)`
   margin: 200px 0;
   width: 100%;
 `;
@@ -86,12 +86,12 @@ export const ProjectContainer = styled(motion.div)`
   ${props =>
     props.position === "up" &&
     css`
-      margin-top: -100px;
+      margin-top: -130px;
     `}
   ${props =>
     props.position === "down" &&
     css`
-      margin-top: 100px;
+      margin-top: 130px;
     `}
     
     a {

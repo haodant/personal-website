@@ -13,6 +13,7 @@ export const FooterContent= styled.div`
     line-height: .5rem;
     text-align: center;
     padding: 10px 5px;
+    transition: all 0.2s ease-in-out;
 
     @media (max-width: 600px) {
         font-size: 0.8rem;

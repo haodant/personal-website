@@ -7,7 +7,6 @@ import { Flex } from "../../styles/globalStyles";
 import {
   ProjectContainer,
   DesignCodeContent,
-  FeaturedVideo,
   ProjectImage
 } from "../../styles/projectStyles";
 
@@ -83,11 +82,16 @@ const Project = ({ project }) => {
           y: 72
         }
       }}
+      exit={{
+        y: 800,
+        opacity: 0,
+        transition: { duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }
+      }}
     >
       <Link to={"/work/" + project.id} key={project.id}>
         <DesignCodeContent
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
+          transition={{ duration: 0.6, ease: [0.9, 0.05, -0.01, 0.6] }}
           onHoverStart={() => setHovered(!hovered)}
           onHoverEnd={() => setHovered(!hovered)}
           onMouseEnter={() => {
