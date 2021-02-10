@@ -73,12 +73,12 @@ const ProjectDetails = props => {
           }}
         >
           <ProjectContent variants={parent} initial="initial" animate="animate" exit="exit">
-            <motion.h2 variants={child} className="project-type">
+            <motion.h3 variants={child} className="project-type">
               {project.type}
-            </motion.h2>
-            <motion.h4 variants={child} className="project-title">
+            </motion.h3>
+            <motion.h2 variants={child} className="project-title">
               {project.title}
-            </motion.h4>
+            </motion.h2>
             <motion.p variants={child} className="project-description">{project.description}</motion.p>
             {project.github ? renderLink("Github", project.github) : null}
             {project.website ? renderLink("Website", project.website) : null}

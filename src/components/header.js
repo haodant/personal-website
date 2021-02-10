@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -34,7 +32,7 @@ const Header = ({
 
   const navRoutes = [
     { id: "work", title: "work", path: "/work" },
-    { id: "about", title: "about", path: "/about" }
+    // { id: "about", title: "about", path: "/about" }
   ];
 
   return (
@@ -49,13 +47,13 @@ const Header = ({
             onMouseEnter={() => onCursor("hovered")}
             onMouseLeave={onCursor}
           >
-            <Link to="/" key='home'>Ha</Link>
+            <NavLink to="/" key='home'>Ha</NavLink>
             <span
               onClick={toggleTheme}
               onMouseEnter={() => onCursor("pointer")}
               onMouseLeave={onCursor}
             ></span>
-            <Link to="/" key='home2'>dan Tan</Link>
+            <NavLink to="/" key='home2'>dan Tan</NavLink>
           </Logo>
 
           <Menu>
@@ -65,9 +63,9 @@ const Header = ({
                   onMouseEnter={() => onCursor("pointer")}
                   onMouseLeave={onCursor}
                 >
-                  <Link to={route.path} key={route.id}>
+                  <NavLink to={route.path} key={route.id} activeClassName="active">
                     <motion.div className="link">{route.title}</motion.div>
-                  </Link>
+                  </NavLink>
                 </motion.li>
               ))}
           </Menu>

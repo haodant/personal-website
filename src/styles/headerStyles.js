@@ -42,5 +42,10 @@ export const Menu = styled.ul`
       display: flex;
       align-items: center;
     }
+    .active {
+      .link {
+        color: ${props => props.theme.red};
+      }
+    }
   }
 `;

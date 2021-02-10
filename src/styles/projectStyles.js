@@ -46,6 +46,7 @@ export const ProjectImage = styled(motion.img)`
   opacity: 0.8;
   transition: 0.4s cubic-bezier(0.6, -0.05, 0.1, 0.99);
   object-fit: cover;
+  filter: ${props => props.theme.filter};
 `;
 
 export const ProjectDescription = styled.div`
@@ -66,6 +67,9 @@ export const ProjectSection = styled.h2`
 export const ProjectPage = styled(motion.div)`
   margin: 200px 0;
   width: 100%;
+  @media (max-width: 590px) {
+    margin: 150px 0;
+  }
 `;
 
 // Project summary
@@ -109,15 +113,17 @@ export const ProjectContainer = styled(motion.div)`
     display: block;
     overflow: hidden;
     object-fit: cover;
+    filter: ${props => props.theme.filter};
   }
 `;
 
 export const DesignCodeContent = styled(motion.div)`
   height: 260px;
   width: 100%;
-  padding: 10px 80px;
+  padding: 10px 40px 10px 80px;
   box-sizing: border-box;
   color: ${props => props.theme.text};
+
   h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -154,6 +160,19 @@ export const DesignCodeContent = styled(motion.div)`
       }
     }
   }
+
+  @media (max-width: 590px) {
+    padding: 10px;
+    h3 {
+      margin-top: 0px;
+    }
+    .project-title {
+      bottom: -110px;
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 30px;
+    }
+  }
 `;
 
 // PROJECT DETAILS PAGE
@@ -164,7 +183,9 @@ export const ProjectDetail = styled(motion.div)`
   align-items: center;
   overflow: hidden;
   color: ${props => props.theme.background};
+
   @media (max-width: 1000px) {
+    height: auto;
     align-items: flex-start;
     flex-direction: column;
     margin-top: 130px;
@@ -181,11 +202,12 @@ export const ProjectContent = styled(motion.div)`
     font-weight: 400;
   }
   .project-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 400;
+    margin: 28px 0;
   }
   .project-description {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   span {
     font-size: 1.2rem;
@@ -207,16 +229,16 @@ export const ProjectContent = styled(motion.div)`
     width: 90%;
     margin-left: 10px;
     .project-title {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
     .project-description {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
     span {
       font-size: 0.8rem;
       svg {
-      width: 10px;
-      height: 10px;
+        width: 10px;
+        height: 10px;
       }
     }
   }
@@ -268,5 +290,6 @@ export const Showcase = styled(motion.div)`
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+    filter: ${props => props.theme.filter};
   }
 `;

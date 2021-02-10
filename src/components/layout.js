@@ -22,7 +22,9 @@ const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
     text-decoration: none;
-    cursor: none;
+    @media (min-width: 1000px) {
+      cursor: none;
+    }
   }
 
   html {
@@ -43,12 +45,14 @@ const Layout = ({ children }) => {
     background: "#151E27",
     text: "#cfbeb5",
     red: "#9b5555",
+    filter: "brightness(0.85) contrast(0.9)"
   };
 
   const lightTheme = {
     background: "#f2f0e6",
     text: "#232623",
     red: "#9b5555",
+    filter: "contrast(0.7)"
   };
   
   const size = useWindowSize();
