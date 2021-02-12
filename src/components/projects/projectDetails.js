@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence, useTransform } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-// import Panel from "../panel";
-
 import { research } from "./project.data";
+import Panel from '../panel';
 
 // Styled components
 import {
@@ -13,7 +12,7 @@ import {
   ProjectContent,
   Showcase
 } from "../../styles/projectStyles";
-import { PanelAnimation } from '../../styles/globalStyles'
+
 import { parent, child } from "../../styles/animation";
 
 // Context
@@ -24,9 +23,6 @@ import {
 
 //Custom hook
 import useWindowSize from "../../hooks/useWindowSize";
-
-//Ease
-const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
 const ProjectDetails = props => {
   const id = props.match.params.id;
@@ -91,15 +87,7 @@ const ProjectDetails = props => {
             {project.vimeo ? renderLink("Vimeo", project.vimeo) : null}
             {project.pdf ? renderLink("pdf", project.pdf) : null}
           </ProjectContent>
-          <Showcase
-            // initial={{
-            //   opacity: 0
-            // }}
-            // animate={{
-            //   opacity: 1,
-            //   transition: { delay: 1, ...transition }
-            // }}
-          >
+          <Showcase>
             {project.video ? (
               <motion.video
                 src={`/video/${project.video}`}
@@ -127,25 +115,5 @@ const ProjectDetails = props => {
     </>
   );
 };
-
-const Panel = () => {
-  return (
-      <PanelAnimation
-          initial={{ top: 0, height: "100vh" }}
-          animate={{
-              height: 0,
-              bottom: null
-          }}
-          exit={{ 
-              height: window.innerHeight,
-              top: 0,
-              transition: { delay: 0.2, ...transition, duration: 0.8 }
-          }}
-          transition={{ ...transition, duration: 1 }}
-      >
-          
-      </PanelAnimation>
-  )
-}
 
 export default ProjectDetails;

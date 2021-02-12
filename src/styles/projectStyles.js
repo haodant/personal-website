@@ -270,12 +270,20 @@ export const CloseButton = styled.div`
     height: 36px;
     width: 4px;
     background-color: ${props => props.theme.text};
+    transition: all 0.25s ease-out;
   }
   &:before {
     transform: rotate(45deg);
   }
   &:after {
     transform: rotate(-45deg);
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      transform: rotate(90deg);
+    }
   }
 `;
 

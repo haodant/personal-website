@@ -10,21 +10,6 @@ export const Banner = styled(motion.div)`
     position: relative;
 `;
 
-export const BannerTitle = styled(motion.h1)`
-    position: absolute;
-    bottom: 50vh;
-    left: 10vw;
-    color: ${props => props.theme.text};
-    pointer-events: none;
-`
-
-export const Headline = styled(motion.span)`
-    display: block;
-    font-size: 2rem;
-    font-weight: 900;
-    line-height: 0.76;
-`
-
 export const Quote = styled(motion.div)`
     position: absolute;
     width: 60%;
@@ -32,14 +17,23 @@ export const Quote = styled(motion.div)`
     left: 10vw;
     color: ${props => props.theme.text};
     pointer-events: none;
+    z-index: 11;
+    svg {
+        fill: ${props => props.theme.text};
+    }
 `
 
-export const Quoteline = styled(motion.span)`
+export const Headline = styled(motion.h2)`
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+`
+
+export const Quoteline = styled(motion.p)`
     display: block;
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1;
-    padding-bottom: 1rem;
 `
 // Content Section
 

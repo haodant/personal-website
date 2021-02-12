@@ -1,27 +1,26 @@
-import React from "react"
+import React from "react";
 
-import { transition } from '../styles/animation'
+import { transition } from "../styles/animation";
 
 // styled component
-import { PanelAnimation } from '../styles/globalStyles'
+import { PanelAnimation } from "../styles/globalStyles";
 
 const Panel = () => {
-    return (
-        <PanelAnimation
-            initial={{ height: 0 }}
-            animate={{
-                height: [0, window.innerHeight, 0],
-                bottom: [null, 0, 0]
-            }}
-            exit={{ 
-                height: [0, window.innerHeight, 0],
-                top: [null, 0, 0],
-            }}
-            transition={{ ...transition, duration: 2, times: [0, 0.5, 1] }}
-        >
-            
-        </PanelAnimation>
-    )
-}
+  return (
+    <PanelAnimation
+      initial={{ top: 0, height: "100vh" }}
+      animate={{
+        height: 0,
+        bottom: null
+      }}
+      exit={{
+        height: window.innerHeight,
+        top: 0,
+        transition: { ...transition, duration: 0.6 }
+      }}
+      transition={{ ...transition, duration: 0.8 }}
+    ></PanelAnimation>
+  );
+};
 
-export default Panel
+export default Panel;

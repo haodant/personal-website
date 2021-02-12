@@ -4,12 +4,11 @@ import smokeImg from "../../assets/images/smoke.png";
 
 import {
   Banner,
-  BannerTitle,
   Headline,
   Quote,
   Quoteline
 } from "../../styles/homeStyles";
-import { transition, parent, child } from "../../styles/animation"
+import { transition, parent, child } from "../../styles/animation";
 
 //Custom hook
 import useWindowSize from "../../hooks/useWindowSize";
@@ -17,7 +16,6 @@ import useWindowSize from "../../hooks/useWindowSize";
 const HomeBanner = () => {
   let mount = useRef(null);
   const size = useWindowSize();
-  // const { currentTheme } = useGlobalStateContext();
   let scene, camera, renderer;
   let cloudParticles = [];
 
@@ -78,24 +76,24 @@ const HomeBanner = () => {
   }
 
   return (
-    <Banner 
-      initial={{ opacity: 0 }} 
-      animate={{ 
-        opacity: 1, 
+    <Banner
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
         transition: { duration: 1.2, ease: transition }
       }}
-      exit={{ opacity: 0 }} 
-      >
-      <div ref={mount} />
+      exit={{ opacity: 0 }}
+    >
       <Quote variants={parent} initial="initial" animate="animate">
+        <Headline variants={child}>Hi there,</Headline>
         <Quoteline variants={child}>
           I am a HCI researcher / engineer. 
         </Quoteline>
+        {/* <Quoteline variants={child}>
+          I care about creating emotional and relational experiences using interactive technologies.
+        </Quoteline> */}
       </Quote>
-
-      <BannerTitle variants={parent} initial="initial" animate="animate">
-        <Headline variants={child}>Hi there,</Headline>
-      </BannerTitle>
+      <div ref={mount} />
     </Banner>
   );
 };

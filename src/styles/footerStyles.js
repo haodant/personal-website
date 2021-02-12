@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const FooterNav = styled.div`
+export const FooterNav = styled(motion.div)`
     position: relative;
     bottom: 50px;
     height: 0;
@@ -13,7 +14,7 @@ export const FooterContent= styled.div`
     line-height: .5rem;
     text-align: center;
     padding: 10px 5px;
-    transition: all 0.2s ease-in-out;
+    transition: all 2s cubic-bezier(0.6, -0.05, 0.1, 0.99);;
 
     @media (max-width: 600px) {
         font-size: 0.8rem;

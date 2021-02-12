@@ -1,27 +1,21 @@
-import React from 'react'
+import React from "react";
 // Styled component
-import { Container, Flex } from '../styles/globalStyles'
-import { FooterNav, FooterContent } from '../styles/footerStyles'
+import { Container, Flex } from "../styles/globalStyles";
+import { FooterNav, FooterContent } from "../styles/footerStyles";
+import { transition } from "../styles/animation";
 
+const Footer = () => {
+  return (
+    <FooterNav>
+      <Container>
+        <Flex spaceBetween wraping>
+          <FooterContent>haodantan@gmail.com</FooterContent>
+          <FooterContent>design & coded by me</FooterContent>
+          <FooterContent>Toronto, Canada</FooterContent>
+        </Flex>
+      </Container>
+    </FooterNav>
+  );
+};
 
-const Footer = () =>{
-    return (
-        <FooterNav>
-            <Container>
-                <Flex spaceBetween wraping>
-                    <FooterContent>
-                        haodantan@gmail.com
-                    </FooterContent>
-                    <FooterContent>
-                        design & coded by me
-                    </FooterContent>
-                    <FooterContent>
-                        Toronto, Canada
-                    </FooterContent>
-                </Flex>
-            </Container>
-        </FooterNav>
-    )
-}
-
-export default Footer
+export default Footer;

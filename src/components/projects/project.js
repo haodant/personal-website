@@ -9,6 +9,7 @@ import {
   DesignCodeContent,
   ProjectImage
 } from "../../styles/projectStyles";
+import { transition } from '../../styles/animation';
 
 //Custom hook
 import useWindowSize from "../../hooks/useWindowSize";
@@ -19,7 +20,7 @@ import { useInView } from "react-intersection-observer";
 // Context
 import { useGlobalDispatchContext } from "../../context/globalContext";
 
-const transition = { duration: 0.6, ease: [0.43, 0, 0.2, 1] };
+const transition2 = { duration: 0.6, ease: [0.43, 0, 0.2, 1] };
 
 const Project = ({ project }) => {
   const size = useWindowSize();
@@ -67,7 +68,7 @@ const Project = ({ project }) => {
       key={project.id}
       ref={featuredRef}
       whileHover={{ scale: 1.05 }}
-      transition={{ type: "transform", ...transition }}
+      transition={{ type: "transform", ...transition2 }}
       animate={animation}
       initial="hidden"
       position={getPosition()}
@@ -75,7 +76,7 @@ const Project = ({ project }) => {
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }
+          transition: { duration: 0.6, ease: transition }
         },
         hidden: {
           opacity: 0,
@@ -85,13 +86,13 @@ const Project = ({ project }) => {
       exit={{
         y: 800,
         opacity: 0,
-        transition: { duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }
+        transition: { duration: 1, ease: transition }
       }}
     >
       <Link to={"/work/" + project.id} key={project.id}>
         <DesignCodeContent
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: [0.9, 0.05, -0.01, 0.6] }}
+          transition={{ duration: 0.6, ease: transition }}
           onHoverStart={() => setHovered(!hovered)}
           onHoverEnd={() => setHovered(!hovered)}
           onMouseEnter={() => {
@@ -106,7 +107,7 @@ const Project = ({ project }) => {
             <h3>{project.type}</h3>
             <motion.div
               animate={{ opacity: hovered ? 1 : 0 }}
-              transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
+              transition={{ duration: 0.6, ease: transition }}
               className="meta"
             >
               <h4>{project.stack}</h4>
@@ -117,7 +118,7 @@ const Project = ({ project }) => {
             <span className="arrow">
               <motion.svg
                 animate={{ x: hovered ? 48 : 0 }}
-                transition={transition}
+                transition={transition2}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 101 57"
               >
@@ -130,7 +131,7 @@ const Project = ({ project }) => {
             </span>
           </h2>
         </DesignCodeContent>
-        {project.video ? (
+        {project.video && size.width > 1024 ? (
             <video
               ref={videoRef}
               autoPlay={hovered ? true : false}

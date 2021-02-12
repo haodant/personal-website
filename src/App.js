@@ -6,7 +6,6 @@ import Layout from "./components/layout";
 
 // components
 import HomeBanner from "./components/homePage/homeBanner";
-// import Research from "./components/research";
 import Work from "./components/work";
 import ProjectDetails from "./components/projects/projectDetails";
 
@@ -21,7 +20,7 @@ function App() {
                 <Switch location={location} key={location.pathname}>
                   <Route exact path="/" component={HomeBanner} />
                   <Route exact path="/work/:id" component={ProjectDetails} />
-                  {/* <Route path="/research" component={Research} /> */}
+                  {/* <Route path="/about" component={About} /> */}
                   <Route exact path="/work" component={Work} />
                 </Switch>
               </AnimatePresence>
