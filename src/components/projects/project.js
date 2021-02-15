@@ -137,7 +137,7 @@ const Project = ({ project }) => {
               autoPlay={hovered ? true : false}
               loop
               muted
-              src={`/video/${project.video}`}
+              src={project.video}
             />
         ) : (
           <ProjectImage

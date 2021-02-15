@@ -90,7 +90,7 @@ const ProjectDetails = props => {
           <Showcase>
             {project.video ? (
               <motion.video
-                src={`/video/${project.video}`}
+                src={project.video}
                 loop
                 autoPlay
                 muted

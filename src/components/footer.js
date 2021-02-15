@@ -2,7 +2,6 @@ import React from "react";
 // Styled component
 import { Container, Flex } from "../styles/globalStyles";
 import { FooterNav, FooterContent } from "../styles/footerStyles";
-import { transition } from "../styles/animation";
 
 const Footer = () => {
   return (

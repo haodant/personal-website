@@ -49,7 +49,7 @@ export const research = [
     title: "Designing Public Interaction Architecture",
     description:
       "To motivate pedestrians to interact with the instant environment instead of looking at their phone, we created an interactive installation using Arduino and laser cutting. The concept is a huge glass wall with several kaleidoscopes on the side of an overpass. When people are passing, the kaleidoscopes will rotate so that people see an amazing view of the outside world. If using phone to light the kaleidoscope, the different layers of the kaleidoscope will start to rotate in different directions.",
-    video: "seeingunseen.mp4",
+    video: "https://haodanporfolio.s3.us-east-2.amazonaws.com/seeingunseen.mp4",
     img: "seeingtheunseen.jpg",
     vimeo: "https://vimeo.com/66046636"
   },
@@ -59,7 +59,7 @@ export const research = [
     stack: "Arduino",
     title: "Designing for Long Distance Relationship",
     description: "This interactive design is created to comfort people who have a long distance relationship. It is a soft and flexible object that can be easily and comfortably hold in hand; connecting between two objects; able to sense the pressure; and can “breath” and turn on the light when activated. Build with Arduino.",
-    video: "bymyside.mp4",
+    video: "https://haodanporfolio.s3.us-east-2.amazonaws.com/bymyside.mp4",
     img: "bymyside.jpg",
     vimeo: "https://vimeo.com/66006810"
   },
@@ -70,7 +70,7 @@ export const research = [
     title: "A Street Robot for Address Homelessness",
     description:
       "Raven, addresses immediate needs of homeless and creates engagement between the homeless and the settled in the city, and therefore, increases understanding of the homeless situation in its community in broader population through action. This is a field study with rapid prototyping. This project is the winner of Human-robot Interaction conference'17 Student Design Competition",
-    video: "raven.mp4",
+    video: "https://haodanporfolio.s3.us-east-2.amazonaws.com/raven.mp4",
     img: "raven.jpg",
     link: {ACM: "https://dl.acm.org/doi/abs/10.1145/3029798.3034948"},
     vimeo: "https://vimeo.com/206005457"
@@ -83,7 +83,7 @@ export const research = [
     subtitle: "An experiment study with prototyping",
     description:
       "Through two experiments, we explore how to design shape-changing interfaces using theories of the relation between biological motion and affect. In the first experiment, participants viewed six shape-changing behaviors that varied the velocity, fluidity, direction, and orientation of the movement of an extrusion from a small box. The second experiment used 36 shape-changing behaviors that systematically varied in speed, regularity of motion, and direction. Speed, direction, and orientation impacted emotion ratings significantly and in the predicted directions. These results offer an initial basis for the systematic design of emotions in shape-changing interfaces. ",
-    video: "happy_1.mp4",
+    video: "https://haodanporfolio.s3.us-east-2.amazonaws.com/happy_1.mp4",
     img: "dis.jpg",
     link: {ACM: "https://dl.acm.org/doi/10.1145/2901790.2901845"},
     pdf: "https://a46ba72a-313f-4a67-95b3-de935e574269.filesusr.com/ugd/4614cb_7b99121303a2489b99a6248f71a4856d.pdf"
@@ -96,7 +96,7 @@ export const research = [
     subtitle: "An experiment study on Human-robot Interaction",
     description:
       "This study investigates whether empathy towards an interactive trash bin, particularly empathy induced by the bin’s anthropomorphic appearance and behavior, affects people’s evaluations of the artifact and their intention to use it to recycle. We performed an online survey in which 344 participants viewed a video showing a person interacting with a recycling bin in one of three conditions. We measured people’s perceptions of the bin’s anthropomorphism and animacy, their empathy towards and enjoyment of the bin, and intentions to use the bin. The results suggest that the level of anthropomorphism attributed to the artifact by participants positively affected their empathy towards the recycling bin, which in turn directly influenced their intentions to use the bin. ",
-    video: "trashcan1.mp4",
+    video: "https://haodanporfolio.s3.us-east-2.amazonaws.com/trashcan1.mp4",
     img: "robotictrashcan.png",
     link: {IEEE: "https://ieeexplore.ieee.org/document/7745238"},
     pdf: "https://a46ba72a-313f-4a67-95b3-de935e574269.filesusr.com/ugd/4614cb_54dbbc0d0d5d4920867e0efb81a99e4e.pdf"
