@@ -88,7 +88,7 @@ const ProjectDetails = props => {
             {project.pdf ? renderLink("pdf", project.pdf) : null}
           </ProjectContent>
           <Showcase>
-            {project.video ? (
+            {project.video && size.width > 1024 ? (
               <motion.video
                 src={project.video}
                 loop

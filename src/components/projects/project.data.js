@@ -39,7 +39,8 @@ export const research = [
     title: "Face Censorship",
     description:
       "An experiment on Chrome's facial recognition development tool",
-    img: "faceRecognition.jpg",
+    img: "bianlian.png",
+    video: "https://d290b0l0c1cy86.cloudfront.net/bianlian.mp4",
     github: "https://github.com/haodant/facialRecognition"
   },
   {
