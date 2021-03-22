@@ -16,7 +16,6 @@ export const Quote = styled(motion.div)`
     bottom: 40vh;
     left: 10vw;
     color: ${props => props.theme.text};
-    pointer-events: none;
     z-index: 11;
     svg {
         fill: ${props => props.theme.text};
@@ -34,6 +33,11 @@ export const Quoteline = styled(motion.p)`
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1;
+    a {
+        color: inherit;
+        font-style: italic;
+        text-decoration: ${props => props.theme.red} wavy underline;
+    }
 `
 // Content Section
 

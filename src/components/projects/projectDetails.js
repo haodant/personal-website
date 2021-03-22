@@ -26,7 +26,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 
 const ProjectDetails = props => {
   const id = props.match.params.id;
-  const project = research.find(project => project.id == id);
+  const project = research.find(project => project.id === Number(id));
 
   const { cursorStyles } = useGlobalStateContext();
   const dispatch = useGlobalDispatchContext();
