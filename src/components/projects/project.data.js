@@ -7,6 +7,7 @@ export const research = [
     description:
       "A Static Website created for New York Qin and Calligraphy Salon.",
     img: "qin.png",
+    smallImg: "small-qin.png",
     github: "https://github.com/haodant/guqin",
     website: "https://newyorkguqin.com"
   },
@@ -29,6 +30,7 @@ export const research = [
     description:
       "PetalPlan is an react and redux single-page application web application for teams to post and share their projects. It allows multiple users to sign up, create projects, and see notifications of recent updates on the team.",
     img: "ss_createproject.png",
+    smallImg: "small-ss_createproject.png",
     github: "https://github.com/haodant/Petal-Plan",
     website: "https://net-petalplan.firebaseapp.com"
   },

@@ -120,7 +120,7 @@ export const ProjectContainer = styled(motion.div)`
 export const DesignCodeContent = styled(motion.div)`
   height: 260px;
   width: 100%;
-  padding: 10px 40px 10px 80px;
+  padding: 10px 20px 10px 40px;
   box-sizing: border-box;
   color: ${props => props.theme.text};
 

@@ -52,11 +52,6 @@ const Project = ({ project }) => {
     rootMargin: "-160px"
   });
 
-  const handleClick = e => {
-    const rect = e.target.getBoundingClientRect();
-    dispatch({ type: "POSITION", position: [rect.left, rect.top] });
-  };
-
   useEffect(() => {
     if (inView) {
       animation.start("visible");
@@ -101,7 +96,6 @@ const Project = ({ project }) => {
           onMouseLeave={() => {
             if (videoRef.current) videoRef.current.pause();
           }}
-          onClick={handleClick}
         >
           <Flex spaceBetween>
             <h3>{project.type}</h3>
@@ -141,8 +135,9 @@ const Project = ({ project }) => {
             />
         ) : (
           <ProjectImage
-            src={`/img/${project.img}`}
+            src={project.smallImg ? `/img/${project.smallImg}` : `/img/${project.img}`}
             alt={project.title}
+            loading="lazy"
           ></ProjectImage>
         )}
       </Link>
