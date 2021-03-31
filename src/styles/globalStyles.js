@@ -75,9 +75,25 @@ export const Cursor = styled.div`
 `
 
 export const PanelAnimation = styled(motion.div)`
-    background-color: ${props => props.theme.background};
+    background-color: ${props => props.theme.text};
     width: 100vw;
     height: 100vh;
     position: absolute;
     z-index: 11;
+
+    .shape-outer {
+        position: relative;
+        z-index: 11;
+        top: 100%;
+        pointer-events: none;
+      }
+      
+      .shape {
+        height: 100vh;
+        width: 100%;
+        display: block;
+        transform-origin: 50% 0;
+        fill: ${props => props.theme.text};
+        will-change: transform;
+      }
 `

@@ -7,7 +7,6 @@ export const research = [
     description:
       "A Static Website created for New York Qin and Calligraphy Salon.",
     img: "qin.png",
-    smallImg: "small-qin.png",
     github: "https://github.com/haodant/guqin",
     website: "https://newyorkguqin.com"
   },

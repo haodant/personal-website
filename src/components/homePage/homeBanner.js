@@ -16,6 +16,7 @@ import {
   useGlobalStateContext,
   useGlobalDispatchContext
 } from "../../context/globalContext";
+import Panel from "../panel";
 
 const HomeBanner = () => {
   const { cursorStyles } = useGlobalStateContext()
@@ -27,6 +28,7 @@ const HomeBanner = () => {
   };
 
   return (
+    <>
     <Banner
       initial={{ opacity: 0 }}
       animate={{
@@ -48,6 +50,8 @@ const HomeBanner = () => {
       </Quote>
       <Clouds />
     </Banner>
+    <Panel />
+    </>
   );
 };
 

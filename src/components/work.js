@@ -2,6 +2,7 @@ import React from "react";
 import Project from "./projects/project";
 
 import { research } from "./projects/project.data";
+import Panel from './panel';
 
 // Styled components
 import { Container, Flex } from "../styles/globalStyles";
@@ -17,6 +18,7 @@ const stagger = {
 
 const Work = () => {
   return (
+    <>
     <ProjectPage initial="initial" animate="animate" exit="exit">
       <Container>
         <Flex wraping variants={stagger}>
@@ -26,6 +28,8 @@ const Work = () => {
         </Flex>
       </Container>
     </ProjectPage>
+    <Panel />
+    </>
   );
 };
 

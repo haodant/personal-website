@@ -17,14 +17,10 @@ import useWindowSize from "../../hooks/useWindowSize";
 // Scroll Behavior
 import { useInView } from "react-intersection-observer";
 
-// Context
-import { useGlobalDispatchContext } from "../../context/globalContext";
-
 const transition2 = { duration: 0.6, ease: [0.43, 0, 0.2, 1] };
 
 const Project = ({ project }) => {
   const size = useWindowSize();
-  const dispatch = useGlobalDispatchContext();
 
   //Play video on mouseover
   let videoRef = useRef(null);
