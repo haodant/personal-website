@@ -6,8 +6,8 @@ import Cloud from './cloud'
 
 // Context
 import {
-    useGlobalStateContext
-  } from "../../context/globalContext";
+    useThemeStateContext
+  } from "../../context/themeContext";
 
 
 function CloudParticles({ hasLight } ) {
@@ -27,7 +27,7 @@ function Dolly() {
 }
 
 const Clouds = () => {
-    const { currentTheme } = useGlobalStateContext();
+    const { currentTheme } = useThemeStateContext();
     const color = currentTheme === 'light' ? [0x83a5c9] : [0x5d6e80];
     const hasLight = currentTheme === 'light';
   return (

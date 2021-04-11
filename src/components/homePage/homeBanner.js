@@ -12,15 +12,12 @@ import { transition, parent, child } from "../../styles/animation";
 
 
 // Context
-import {
-  useGlobalStateContext,
-  useGlobalDispatchContext
-} from "../../context/globalContext";
+import { useCursorStateContext, useCursorDispatchContext } from '../../context/cursorContext'
 import Panel from "../panel";
 
 const HomeBanner = () => {
-  const { cursorStyles } = useGlobalStateContext()
-  const dispatch = useGlobalDispatchContext()
+  const { cursorStyles } = useCursorStateContext()
+  const dispatch = useCursorDispatchContext()
 
   const onCursor = cursorType => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;

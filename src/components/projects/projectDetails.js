@@ -16,10 +16,7 @@ import {
 import { parent, child } from "../../styles/animation";
 
 // Context
-import {
-  useGlobalStateContext,
-  useGlobalDispatchContext
-} from "../../context/globalContext";
+import { useCursorStateContext, useCursorDispatchContext } from '../../context/cursorContext'
 
 //Custom hook
 import useWindowSize from "../../hooks/useWindowSize";
@@ -28,8 +25,8 @@ const ProjectDetails = props => {
   const id = props.match.params.id;
   const project = research.find(project => project.id === Number(id));
 
-  const { cursorStyles } = useGlobalStateContext();
-  const dispatch = useGlobalDispatchContext();
+  const { cursorStyles } = useCursorStateContext()
+  const dispatch = useCursorDispatchContext()
 
   const onCursor = cursorType => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;

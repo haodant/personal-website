@@ -10,10 +10,8 @@ import Cursor from "./customCursor";
 import Footer from './footer'
 
 // Context
-import {
-  useGlobalStateContext,
-  useGlobalDispatchContext
-} from "../context/globalContext";
+import { useCursorStateContext, useCursorDispatchContext } from '../context/cursorContext'
+import { useThemeStateContext } from '../context/themeContext'
 
 //Custom hook
 import useWindowSize from "../hooks/useWindowSize";
@@ -56,12 +54,14 @@ const Layout = ({ children }) => {
   };
   
   const size = useWindowSize();
-  const { currentTheme, cursorStyles } = useGlobalStateContext()
-  const dispatch = useGlobalDispatchContext()
+  const { cursorStyles } = useCursorStateContext()
+  const { currentTheme } = useThemeStateContext()
+  const dispatchCursor = useCursorDispatchContext()
+
 
   const onCursor = cursorType => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
-    dispatch({type: 'CURSOR_TYPE', cursorType: cursorType})
+    dispatchCursor({type: 'CURSOR_TYPE', cursorType: cursorType})
   };
 
   const [toggleMenu, setToggleMenu] = useState(false);

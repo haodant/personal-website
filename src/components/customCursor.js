@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react'
 import { Cursor } from '../styles/globalStyles'
 
 // Context
-import { useGlobalStateContext } from '../context/globalContext'
+import { useCursorStateContext } from '../context/cursorContext'
 
 const CustomCursor = ({toggleMenu}) => {
-    const { cursorType } = useGlobalStateContext();
+    const { cursorType } = useCursorStateContext();
     const [mousePosition, setMousePosition] = useState({
         x: 100,
         y: 100

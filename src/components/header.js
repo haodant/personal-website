@@ -7,17 +7,15 @@ import { Container, Flex } from "../styles/globalStyles";
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles";
 
 // Context
-import {
-  useGlobalStateContext,
-  useGlobalDispatchContext
-} from "../context/globalContext";
+import { useThemeStateContext, useThemeDispatchContext } from '../context/themeContext'
+
 import { transition } from '../styles/animation';
 
 const Header = ({
   onCursor,
 }) => {
-  const dispatch = useGlobalDispatchContext();
-  const { currentTheme } = useGlobalStateContext();
+  const dispatch = useThemeDispatchContext();
+  const { currentTheme } = useThemeStateContext();
 
   const toggleTheme = () => {
     if (currentTheme === "dark") {

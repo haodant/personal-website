@@ -37,9 +37,9 @@ export const research = [
     id: 9,
     type: "Design and Coding",
     stack: "Javascript",
-    title: "Face Censorship",
+    title: "Face Recognition",
     description:
-      "An experiment on Chrome's facial recognition development tool",
+      "An experiment on Chrome's facial recognition development tool. It simulates a Chinese intangible heritage - 'face changing opera'",
     img: "bianlian.png",
     video: "https://d290b0l0c1cy86.cloudfront.net/bianlian.mp4",
     github: "https://github.com/haodant/facialRecognition"

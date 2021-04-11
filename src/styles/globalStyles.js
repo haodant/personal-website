@@ -78,7 +78,7 @@ export const PanelAnimation = styled(motion.div)`
     background-color: ${props => props.theme.text};
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 11;
 
     .shape-outer {

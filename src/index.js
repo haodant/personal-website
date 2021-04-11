@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {GlobalProvider} from './context/globalContext'
+import {ThemeProvider} from './context/themeContext'
+import {CursorProvider} from './context/cursorContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalProvider><App /></GlobalProvider>
+    <ThemeProvider>
+      <CursorProvider>
+        <App />
+      </CursorProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
