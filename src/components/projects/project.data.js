@@ -1,6 +1,6 @@
 export const research = [
   {
-    id: 6,
+    id: 0,
     type: "Design and Coding",
     stack: "HTML, CSS",
     title: "New York Qin and Calligraphy Salon Website",
@@ -10,19 +10,19 @@ export const research = [
     github: "https://github.com/haodant/guqin",
     website: "https://newyorkguqin.com"
   },
+  // {
+  //   id: 7,
+  //   type: "Design and Coding",
+  //   stack: "Angular, Mongodb",
+  //   title: "Artgram - A Web App for Curating Art",
+  //   description:
+  //     "Artagram is an angular single-page application web application for displaying art pieces that are gathered by collective efforts. It allows multiple users to sign up, create post, and browse other people's posts.",
+  //   img: "artagram.jpg",
+  //   github: "https://github.com/haodant/Artagram",
+  //   website: "http://www.art-agram.com"
+  // },
   {
-    id: 7,
-    type: "Design and Coding",
-    stack: "Angular, Mongodb",
-    title: "Artgram - A Web App for Curating Art",
-    description:
-      "Artagram is an angular single-page application web application for displaying art pieces that are gathered by collective efforts. It allows multiple users to sign up, create post, and browse other people's posts.",
-    img: "artagram.jpg",
-    github: "https://github.com/haodant/Artagram",
-    website: "http://www.art-agram.com"
-  },
-  {
-    id: 8,
+    id: 1,
     type: "Design and Coding",
     stack: "React, Redux",
     title: "PetalPlan - A Web App for Task Management",
@@ -34,7 +34,7 @@ export const research = [
     website: "https://net-petalplan.firebaseapp.com"
   },
   {
-    id: 9,
+    id: 2,
     type: "Design and Coding",
     stack: "Javascript",
     title: "Face Recognition",
@@ -45,7 +45,7 @@ export const research = [
     github: "https://github.com/haodant/facialRecognition"
   },
   {
-    id: 10,
+    id: 3,
     type: "Design and Coding",
     stack: "Arduino",
     title: "Designing Public Interaction Architecture",
@@ -56,7 +56,7 @@ export const research = [
     vimeo: "https://vimeo.com/66046636"
   },
   {
-    id: 11,
+    id: 4,
     type: "Design and Coding",
     stack: "Arduino",
     title: "Designing for Long Distance Relationship",
@@ -66,7 +66,7 @@ export const research = [
     vimeo: "https://vimeo.com/66006810"
   },
   {
-    id: 0,
+    id: 5,
     type: "Research",
     stack: "HRI'17",
     title: "A Street Robot for Address Homelessness",
@@ -78,7 +78,7 @@ export const research = [
     vimeo: "https://vimeo.com/206005457"
   },
   {
-    id: 1,
+    id: 6,
     type: "Research",
     stack: "DIS'16",
     title: "Designing Affective Shape-changing Interfaces",
@@ -91,7 +91,7 @@ export const research = [
     pdf: "https://a46ba72a-313f-4a67-95b3-de935e574269.filesusr.com/ugd/4614cb_7b99121303a2489b99a6248f71a4856d.pdf"
   },
   {
-    id: 2,
+    id: 7,
     type: "Research",
     stack: "ROMAN'16",
     title: "Perceptions of Usefulness on a Robotic Recycling Bin",
@@ -131,18 +131,18 @@ export const research = [
   //   link: "",
   //   paper: "https://a46ba72a-313f-4a67-95b3-de935e574269.filesusr.com/ugd/4614cb_f30779658e8e41c6a5a1817e44157a8d.pdf"
   // },
-    {
-    id: 3,
-    type: "Research",
-    stack: "CSCW'18",
-    title: "Users’ Rationales for Today’s Collaborative Writing Practices",
-    description: "By interviewing 30 participants from both academia and industry, the paper examines how people write together using today’s commercially available systems. The analysis focuses on the new co-editing capabilities (e.g., track changes) that are integrated into commercial tools and thus adopted by users widely in the last decade. We systematically analyze users’ rationales of why they do not want to write together while they are writing together with other. We argue that the development of collaborative writing tools is far from finished and these findings provide insights into the design of technology and suggest future directions for research.  ",
-    img: "collaborativeWriting.jpg",
-    link: {ACM: "https://dl.acm.org/doi/10.1145/3134742"},
-    pdf: "https://a46ba72a-313f-4a67-95b3-de935e574269.filesusr.com/ugd/4614cb_16cad74034404e6db8c0987d2629bb93.pdf"
-  },
+    // {
+  //   id: 3,
+  //   type: "Research",
+  //   stack: "CSCW'18",
+  //   title: "Users’ Rationales for Today’s Collaborative Writing Practices",
+  //   description: "By interviewing 30 participants from both academia and industry, the paper examines how people write together using today’s commercially available systems. The analysis focuses on the new co-editing capabilities (e.g., track changes) that are integrated into commercial tools and thus adopted by users widely in the last decade. We systematically analyze users’ rationales of why they do not want to write together while they are writing together with other. We argue that the development of collaborative writing tools is far from finished and these findings provide insights into the design of technology and suggest future directions for research.  ",
+  //   img: "collaborativeWriting.jpg",
+  //   link: {ACM: "https://dl.acm.org/doi/10.1145/3134742"},
+  //   pdf: "https://a46ba72a-313f-4a67-95b3-de935e574269.filesusr.com/ugd/4614cb_16cad74034404e6db8c0987d2629bb93.pdf"
+  // },
   {
-    id: 4,
+    id: 8,
     type: "Research",
     stack: "IASDR'18",
     title: "Forging Rural-Urban Connections",
@@ -152,14 +152,14 @@ export const research = [
     link: {IASDR: "https://scholar.uc.edu/concern/articles/mk61rg962?locale=en"},
     pdf: "http://158.132.160.118/bitstream/10397/79319/1/TanWeiBlevis_1525.pdf"
   },
-  {
-    id: 5,
-    type: "Research",
-    stack: "Oxford press",
-    title: "Neurophysiological Perspectives on Emotion Perception from Dance",
-    description:
-      "A series of neuropsychological studies about aesthetics and emotions, using fMRI and gigantic data analysis.",
-    img: "neuropsy.jpg",
-    link: {oxfordhandbooks: "https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780199949298.001.0001/oxfordhb-9780199949298-e-46"}
-  }
+  // {
+  //   id: 5,
+  //   type: "Research",
+  //   stack: "Oxford press",
+  //   title: "Neurophysiological Perspectives on Emotion Perception from Dance",
+  //   description:
+  //     "A series of neuropsychological studies about aesthetics and emotions, using fMRI and gigantic data analysis.",
+  //   img: "neuropsy.jpg",
+  //   link: {oxfordhandbooks: "https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780199949298.001.0001/oxfordhb-9780199949298-e-46"}
+  // }
 ];
