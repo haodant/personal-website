@@ -12,17 +12,17 @@ import { transition, parent, child } from "../../styles/animation";
 
 
 // Context
-import { useCursorStateContext, useCursorDispatchContext } from '../../context/cursorContext'
+// import { useCursorStateContext, useCursorDispatchContext } from '../../context/cursorContext'
 import Panel from "../panel";
 
 const HomeBanner = () => {
-  const { cursorStyles } = useCursorStateContext()
-  const dispatch = useCursorDispatchContext()
+  // const { cursorStyles } = useCursorStateContext()
+  // const dispatch = useCursorDispatchContext()
 
-  const onCursor = cursorType => {
-    cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
-    dispatch({ type: 'CURSOR_TYPE', cursorType: cursorType })
-  };
+  // const onCursor = cursorType => {
+  //   cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
+  //   dispatch({ type: 'CURSOR_TYPE', cursorType: cursorType })
+  // };
 
   return (
     <>
@@ -40,9 +40,7 @@ const HomeBanner = () => {
           I am a HCI researcher / engineer.
         </Quoteline>
         <Quoteline variants={child}>
-          <Link to={"/work/"} key="workpage" onMouseEnter={() => onCursor("hovered")}
-              onMouseLeave={onCursor}>
-            See my work.</Link>
+          <Link to={"/work/"} key="workpage">See my work.</Link>
         </Quoteline>
       </Quote>
       <Clouds />

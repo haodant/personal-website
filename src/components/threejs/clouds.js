@@ -27,11 +27,19 @@ function Dolly() {
 }
 
 const Clouds = () => {
-    const { currentTheme } = useThemeStateContext();
-    const color = currentTheme === 'light' ? [0x83a5c9] : [0x5d6e80];
-    const hasLight = currentTheme === 'light';
+  const { currentTheme } = useThemeStateContext();
+  const color = currentTheme === 'light' ? [0x83a5c9] : [0x5d6e80];
+  const hasLight = currentTheme === 'light';
+
+  const handleCanvasCreated = (state) => {
+    state.gl.preserveDrawingBuffer = true;
+  };
+
   return (
-    <Canvas camera={{ fov: 60, position: [0, 0, 20], far: 1000 }}>
+    <Canvas 
+      camera={{ fov: 60, position: [0, 0, 20], far: 1000 }}
+      onCreated={handleCanvasCreated}
+    >
       <color attach="background" args={color} />
       <ambientLight color={0x937474} />
       <CloudParticles hasLight={hasLight} />

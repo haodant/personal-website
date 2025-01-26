@@ -43,14 +43,20 @@ const Layout = ({ children }) => {
     background: "#151E27",
     text: "#cfbeb5",
     red: "#9b5555",
-    filter: "brightness(0.85) contrast(0.9)"
+    filter: "brightness(0.85) contrast(0.9)",
+    themeToggleTransformSun:"scale(1.75)",
+    themeToggleOpacitySunBeams: "0",
+    themeToggleTransformMoon:"translateX(-7px)",
+    themeToggleRotate: "rotateZ(-25deg)",
+    themeToggleTransitionDuration: "0.15s"
   };
 
   const lightTheme = {
     background: "#f2f0e6",
     text: "#232623",
     red: "#9b5555",
-    filter: "contrast(0.7)"
+    filter: "contrast(0.7)",
+    themeToggleTransitionDuration: "0.5s"
   };
   
   const size = useWindowSize();
