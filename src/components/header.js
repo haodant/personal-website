@@ -1,13 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 // styled components
 import { Container, Flex } from "../styles/globalStyles";
 import { HeaderNav, Logo, Menu } from "../styles/headerStyles";
-
-// Context
-import { useThemeStateContext, useThemeDispatchContext } from '../context/themeContext'
 
 import { transition } from '../styles/animation';
 import ThemeToggle from "./homePage/themeToggle";
@@ -33,11 +30,7 @@ const Header = ({
             // onMouseLeave={onCursor}
           >
             <NavLink to="/" key='home'>Ha</NavLink>
-            <span
-              // onClick={toggleTheme}
-              // onMouseEnter={() => onCursor("pointer")}
-              // onMouseLeave={onCursor}
-            ></span>
+            <span></span>
             <NavLink to="/" key='home2'>dan Tan</NavLink>
           </Logo>
 

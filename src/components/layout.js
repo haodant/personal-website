@@ -44,6 +44,7 @@ const Layout = ({ children }) => {
     text: "#cfbeb5",
     red: "#9b5555",
     filter: "brightness(0.85) contrast(0.9)",
+    hover: "hsl(210 15% 90%)",
     themeToggleTransformSun:"scale(1.75)",
     themeToggleOpacitySunBeams: "0",
     themeToggleTransformMoon:"translateX(-7px)",
@@ -56,6 +57,7 @@ const Layout = ({ children }) => {
     text: "#232623",
     red: "#9b5555",
     filter: "contrast(0.7)",
+    hover:"hsl(210 10% 45%)",
     themeToggleTransitionDuration: "0.5s"
   };
   

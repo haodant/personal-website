@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { motion } from "framer-motion"
+import { hexToRgb } from "../utils";
 
 export const Container = styled.div`
     flex-grow: 1;
@@ -42,9 +43,9 @@ export const Cursor = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    width: 32px;
-    height: 32px;
-    background: ${props => props.theme.red};
+    width: 20px;
+    height: 20px;
+    background: ${props => `rgba(${hexToRgb(props.theme.red)}, 0.8)`}; 
     border-radius: 100%;
     transform: translate(-50%, -50%);
     transition: all .1s ease-in-out;

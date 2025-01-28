@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: 'EB Garamond', serif;
+  font-family: Helvetica, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

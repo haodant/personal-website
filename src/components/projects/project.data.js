@@ -2,13 +2,21 @@ export const research = [
   {
     id: 0,
     type: "Design and Coding",
-    stack: "HTML, CSS",
-    title: "New York Qin and Calligraphy Salon Website",
+    stack: "React, Java MVC",
+    title: "Amazon Beauty Widgets",
     description:
-      "A Static Website created for New York Qin and Calligraphy Salon.",
-    img: "qin.png",
-    github: "https://github.com/haodant/guqin",
-    website: "https://newyorkguqin.com"
+      "Amazon Beauty Widgets are a set of interactive wigets to display beauty products. It is built with React and Java MVC.",
+    video: "https://d290b0l0c1cy86.cloudfront.net/amazonbeauty.mp4",
+    website: "https://www.amazon.com/stores/ELEMIS/page/3B3F2026-F5E6-43D5-800E-02B5EBD92CED",
+  },
+  {
+    id: 1,
+    type: "Design and Coding",
+    stack: "StencilJS and Angular",
+    title: "Design system for HR tools",
+    description:
+      "This design system is created for HR tools. It includes a set of components and guidelines for developers to use.",
+    video: "https://d290b0l0c1cy86.cloudfront.net/hrdesign.mp4",
   },
   // {
   //   id: 7,
@@ -21,18 +29,18 @@ export const research = [
   //   github: "https://github.com/haodant/Artagram",
   //   website: "http://www.art-agram.com"
   // },
-  {
-    id: 1,
-    type: "Design and Coding",
-    stack: "React, Redux",
-    title: "PetalPlan - A Web App for Task Management",
-    description:
-      "PetalPlan is an react and redux single-page application web application for teams to post and share their projects. It allows multiple users to sign up, create projects, and see notifications of recent updates on the team.",
-    img: "ss_createproject.png",
-    smallImg: "small-ss_createproject.png",
-    github: "https://github.com/haodant/Petal-Plan",
-    website: "https://net-petalplan.firebaseapp.com"
-  },
+  // {
+  //   id: 1,
+  //   type: "Design and Coding",
+  //   stack: "React, Redux",
+  //   title: "PetalPlan - A Web App for Task Management",
+  //   description:
+  //     "PetalPlan is an react and redux single-page application web application for teams to post and share their projects. It allows multiple users to sign up, create projects, and see notifications of recent updates on the team.",
+  //   img: "ss_createproject.png",
+  //   smallImg: "small-ss_createproject.png",
+  //   github: "https://github.com/haodant/Petal-Plan",
+  //   website: "https://net-petalplan.firebaseapp.com"
+  // },
   {
     id: 2,
     type: "Design and Coding",
@@ -97,7 +105,7 @@ export const research = [
     title: "Perceptions of Usefulness on a Robotic Recycling Bin",
     subtitle: "An experiment study on Human-robot Interaction",
     description:
-      "This study investigates whether empathy towards an interactive trash bin, particularly empathy induced by the bin’s anthropomorphic appearance and behavior, affects people’s evaluations of the artifact and their intention to use it to recycle. We performed an online survey in which 344 participants viewed a video showing a person interacting with a recycling bin in one of three conditions. We measured people’s perceptions of the bin’s anthropomorphism and animacy, their empathy towards and enjoyment of the bin, and intentions to use the bin. The results suggest that the level of anthropomorphism attributed to the artifact by participants positively affected their empathy towards the recycling bin, which in turn directly influenced their intentions to use the bin. ",
+      "This study explores whether empathy towards an interactive trash bin, induced by its anthropomorphic appearance and behavior, affects people's evaluations and their intention to use it for recycling. An online survey with 344 participants showed a video of a person interacting with the bin in three conditions. We measured perceptions of the bin's anthropomorphism and animacy, empathy towards and enjoyment of the bin, and intentions to use it. Results suggest that higher anthropomorphism led to greater empathy, which directly influenced intentions to use the bin.",
     video: "https://d290b0l0c1cy86.cloudfront.net/trashcan1.mp4",
     img: "robotictrashcan.png",
     link: {IEEE: "https://ieeexplore.ieee.org/document/7745238"},
@@ -141,16 +149,27 @@ export const research = [
   //   link: {ACM: "https://dl.acm.org/doi/10.1145/3134742"},
   //   pdf: "https://a46ba72a-313f-4a67-95b3-de935e574269.filesusr.com/ugd/4614cb_16cad74034404e6db8c0987d2629bb93.pdf"
   // },
+  // {
+  //   id: 8,
+  //   type: "Research",
+  //   stack: "IASDR'18",
+  //   title: "Forging Rural-Urban Connections",
+  //   subtitle: "A field study and interaction design project",
+  //   description: "This study aims to explore the difficulties of preserving cultural heritage in rural areas and to inform better designs of computer systems to support such preservation. In this case study, we observed and documented craft cultures in three rural villages in China. We propose a conceptual system design for an installation and software connecting rural craftspeople and people who appreciate crafts, as a means of fostering a mutual relationship of support and appreciation.",
+  //   img: "heritage.jpg",
+  //   link: {IASDR: "https://scholar.uc.edu/concern/articles/mk61rg962?locale=en"},
+  //   pdf: "http://158.132.160.118/bitstream/10397/79319/1/TanWeiBlevis_1525.pdf"
+  // },
   {
     id: 8,
-    type: "Research",
-    stack: "IASDR'18",
-    title: "Forging Rural-Urban Connections",
-    subtitle: "A field study and interaction design project",
-    description: "This study aims to explore the difficulties of preserving cultural heritage in rural areas and to inform better designs of computer systems to support such preservation. In this case study, we observed and documented craft cultures in three rural villages in China. We propose a conceptual system design for an installation and software connecting rural craftspeople and people who appreciate crafts, as a means of fostering a mutual relationship of support and appreciation.",
-    img: "heritage.jpg",
-    link: {IASDR: "https://scholar.uc.edu/concern/articles/mk61rg962?locale=en"},
-    pdf: "http://158.132.160.118/bitstream/10397/79319/1/TanWeiBlevis_1525.pdf"
+    type: "Design and Coding",
+    stack: "HTML, CSS",
+    title: "New York Qin and Calligraphy Salon Website",
+    description:
+      "A Static Website created for New York Qin and Calligraphy Salon.",
+    img: "qin.png",
+    github: "https://github.com/haodant/guqin",
+    website: "https://newyorkguqin.com"
   },
   // {
   //   id: 5,

@@ -113,7 +113,12 @@ export const ProjectContainer = styled(motion.div)`
     display: block;
     overflow: hidden;
     object-fit: cover;
+    border-radius: 10px;
     filter: ${props => props.theme.filter};
+  }
+
+  img {
+    border-radius: 10px;
   }
 `;
 
@@ -123,7 +128,8 @@ export const DesignCodeContent = styled(motion.div)`
   padding: 10px 20px 10px 40px;
   box-sizing: border-box;
   color: ${props => props.theme.text};
-
+  box-shadow: 8px 8px 8px -4px ${props => props.theme.text};
+  border-radius: 10px;
   h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -138,10 +144,10 @@ export const DesignCodeContent = styled(motion.div)`
   }
   .project-title {
     position: absolute;
-    bottom: -120px;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 44px;
+    bottom: -140px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.75rem;
     margin: 0;
     .arrow {
       width: 100px;
@@ -202,15 +208,15 @@ export const ProjectContent = styled(motion.div)`
     font-weight: 400;
   }
   .project-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 400;
     margin: 28px 0;
   }
   .project-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   span {
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: inline-block;
     padding-right: 12px;
     a {

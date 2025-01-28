@@ -12,14 +12,19 @@ export const HeaderNav = styled(motion.div)`
 `;
 
 export const Logo = styled.div`
+  &:hover {
+    a {
+      color: ${props => props.theme.hover};
+    }
+  }
   a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: ${props => props.theme.text};
   }
   span {
-    height: 0.8rem;
-    width: 0.8rem;
+    height: 1rem;
+    width: 1rem;
     background: ${props => props.theme.red};
     margin: 0 4px;
     border-radius: 100%;
@@ -41,6 +46,9 @@ export const Menu = styled.ul`
       position: relative;
       display: flex;
       align-items: center;
+      &:hover {
+        color: ${props => props.theme.hover};
+      }
     }
     .active {
       .link {
@@ -62,8 +70,8 @@ export const Button = styled(motion.div)`
     fill: ${props => props.theme.text};
   }
 
-  .theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
-    fill: var(--icon-fill-hover);
+  &:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+    fill: ${props => props.theme.hover};
   }
 
   .sun-and-moon > .sun-beams {
@@ -71,8 +79,8 @@ export const Button = styled(motion.div)`
     stroke-width: 2px;
   }
 
-  .theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
-    stroke: var(--icon-fill-hover);
+  &:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+    stroke: ${props => props.theme.hover};
   }
 
   .sun-and-moon > .sun {

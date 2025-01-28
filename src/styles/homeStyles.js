@@ -24,19 +24,22 @@ export const Quote = styled(motion.div)`
 
 export const Headline = styled(motion.h2)`
     display: block;
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 1.6rem;
+    font-weight: 600;
 `
 
 export const Quoteline = styled(motion.p)`
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
     line-height: 1;
     a {
         color: inherit;
         font-style: italic;
         text-decoration: ${props => props.theme.red} wavy underline;
+        &:hover {
+            color: ${props => props.theme.hover};
+        }
     }
 `
 // Content Section
@@ -86,7 +89,7 @@ export const FeatureContent = styled(motion.div)`
         position: absolute;
         bottom: -128px;
         font-size: 7rem;
-        font-weight: 900;
+        font-weight: 600;
         line-height: 90px;
         margin: 0;
         .arrow {
