@@ -8,7 +8,10 @@ const Footer = () => {
     <FooterNav>
       <Container>
         <Flex spaceBetween wraping>
-          <FooterContent>haodantan@gmail.com</FooterContent>
+          <FooterContent>
+            haodantan@gmail.com, 
+            <a href="https://www.linkedin.com/in/haodantan/"> LinkedIn</a>
+          </FooterContent>
           <FooterContent>design & coded by me</FooterContent>
           <FooterContent>Toronto, Canada</FooterContent>
         </Flex>

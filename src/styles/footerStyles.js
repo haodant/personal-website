@@ -15,6 +15,14 @@ export const FooterContent= styled.div`
     text-align: center;
     padding: 10px 5px;
 
+    a {
+        color: ${props => props.theme.text};
+        text-decoration: none;
+        &:hover {
+            color: ${props => props.theme.hover};
+        }
+    }
+
     @media (max-width: 600px) {
         font-size: 0.8rem;
         padding: 5px 5px;

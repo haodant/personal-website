@@ -26,7 +26,7 @@ export const Logo = styled.div`
     height: 1rem;
     width: 1rem;
     background: ${props => props.theme.red};
-    margin: 0 4px;
+    margin: 0 2px;
     border-radius: 100%;
     display: inline-block;
     position: relative;
@@ -59,7 +59,9 @@ export const Menu = styled.ul`
 `;
 
 // theme toggle animation reference: https://web.dev/patterns/theming/theme-switch#css
-export const Button = styled(motion.div)`
+export const Button = styled(motion.button)`
+  background: transparent;
+  border: none;
   align-items: center;
   padding: 16px;
   .sun-and-moon > :is(.moon, .sun, .sun-beams) {

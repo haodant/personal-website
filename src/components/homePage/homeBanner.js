@@ -10,19 +10,9 @@ import {
 } from "../../styles/homeStyles";
 import { transition, parent, child } from "../../styles/animation";
 
-
-// Context
-// import { useCursorStateContext, useCursorDispatchContext } from '../../context/cursorContext'
 import Panel from "../panel";
 
 const HomeBanner = () => {
-  // const { cursorStyles } = useCursorStateContext()
-  // const dispatch = useCursorDispatchContext()
-
-  // const onCursor = cursorType => {
-  //   cursorType = (cursorStyles.includes(cursorType) && cursorType) || false;
-  //   dispatch({ type: 'CURSOR_TYPE', cursorType: cursorType })
-  // };
 
   return (
     <>

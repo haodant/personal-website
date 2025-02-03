@@ -6,7 +6,8 @@ export const research = [
     title: "Amazon Beauty Widgets",
     description:
       "Amazon Beauty Widgets are a set of interactive wigets to display beauty products. It is built with React and Java MVC.",
-    video: "https://d290b0l0c1cy86.cloudfront.net/amazonbeauty.mp4",
+    video: "https://haodanporfolio.s3.us-east-2.amazonaws.com/amazon_beauty.mp4",
+    img:"amazonbeauty.png",
     website: "https://www.amazon.com/stores/ELEMIS/page/3B3F2026-F5E6-43D5-800E-02B5EBD92CED",
   },
   {
@@ -15,8 +16,8 @@ export const research = [
     stack: "StencilJS and Angular",
     title: "Design system for HR tools",
     description:
-      "This design system is created for HR tools. It includes a set of components and guidelines for developers to use.",
-    video: "https://d290b0l0c1cy86.cloudfront.net/hrdesign.mp4",
+      "This design system includes a set of components and guidelines for developers to use. It is built with StencilJS and Angular. All components are Flexible, Reusable, Configurable, Responsive, and Support localization & a11y requirements.",
+    img: "design_system.jpeg",
   },
   // {
   //   id: 7,

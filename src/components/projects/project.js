@@ -93,14 +93,14 @@ const Project = ({ project }) => {
             if (videoRef.current) videoRef.current.pause();
           }}
         >
-          <Flex spaceBetween>
-            <h3>{project.type}</h3>
+          <Flex className="metaContainer" spaceBetween>
+            <span>{project.type}</span>
             <motion.div
               animate={{ opacity: hovered ? 1 : 0 }}
               transition={{ duration: 0.6, ease: transition }}
               className="meta"
             >
-              <h4>{project.stack}</h4>
+              <span>{project.stack}</span>
             </motion.div>
           </Flex>
           <h2 className="project-title">

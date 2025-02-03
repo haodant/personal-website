@@ -77,8 +77,8 @@ export const ProjectContainer = styled(motion.div)`
   position: relative;
   width: 100%;
   margin: 20px 40px;
-  @media (max-width: 590px) {
-    margin: 20px 0;
+  @media (max-width: 936px) {
+    margin: 40px;
   }
   @media (min-width: 937px) {
     max-width: 38vw;
@@ -125,22 +125,18 @@ export const ProjectContainer = styled(motion.div)`
 export const DesignCodeContent = styled(motion.div)`
   height: 260px;
   width: 100%;
-  padding: 10px 20px 10px 40px;
+  padding: 0 20px;
   box-sizing: border-box;
   color: ${props => props.theme.text};
   box-shadow: 8px 8px 8px -4px ${props => props.theme.text};
   border-radius: 10px;
-  h3 {
-    font-size: 1rem;
-    font-weight: 600;
+  .metaContainer {
+    position: absolute;
+    top: -26px;
+    width: 90%;
   }
   .meta {
     display: flex;
-    h4 {
-      &:last-child {
-        margin-left: 1rem;
-      }
-    }
   }
   .project-title {
     position: absolute;
