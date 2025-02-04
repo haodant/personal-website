@@ -78,7 +78,7 @@ export const ProjectContainer = styled(motion.div)`
   width: 100%;
   margin: 20px 40px;
   @media (max-width: 936px) {
-    margin: 40px;
+    margin: 20px 0;
   }
   @media (min-width: 937px) {
     max-width: 38vw;
@@ -163,13 +163,13 @@ export const DesignCodeContent = styled(motion.div)`
     }
   }
 
-  @media (max-width: 590px) {
+  @media (max-width: 936px) {
     padding: 10px;
     h3 {
       margin-top: 0px;
     }
     .project-title {
-      bottom: -110px;
+      bottom: -115px;
       font-size: 1.4rem;
       font-weight: 400;
       line-height: 30px;
@@ -301,5 +301,9 @@ export const Showcase = styled(motion.div)`
     object-fit: cover;
     overflow: hidden;
     filter: ${props => props.theme.filter};
+  }
+
+  @media (max-width: 1000px) {
+    margin-bottom: 60px;
   }
 `;
