@@ -9,7 +9,7 @@ const Footer = () => {
       <Container>
         <Flex spaceBetween wraping>
           <FooterContent>
-            haodantan@gmail.com, 
+            ashleytanhd221@gmail.com, 
             <a href="https://www.linkedin.com/in/haodantan/"> LinkedIn</a>
           </FooterContent>
           <FooterContent>design & coded by me</FooterContent>
